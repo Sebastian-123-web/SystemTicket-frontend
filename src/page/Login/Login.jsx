@@ -2,7 +2,6 @@ import { Button, Input, Spinner, Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 
 import { useLoginContext } from '../../context/LoginContext'
-import { Navigate } from "react-router-dom";
 
 export const Login = () => {
 
@@ -17,14 +16,12 @@ export const Login = () => {
             ...l,
             [name] : value
         }))
-        console.log(dataLogin)
     }
 
     // VALIDAR INICIO DE SESION
     const { login } = useLoginContext()
-    const handleLoginUser = (collectLogin) => {
-        login(collectLogin)
-        Navigate('/dashboard')
+    const handleLoginUser = async(collectLogin) => {
+        await login(collectLogin) ? console.log(login(collectLogin)) : console.log('error mail o pass')
     }
 
     // SPINNER DE CARGA
