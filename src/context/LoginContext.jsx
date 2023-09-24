@@ -21,7 +21,9 @@ export const LoginContextProvider = ({children}) => {
         setUser(dataUser)
         if(dataUser){
             localStorage.setItem('user', JSON.stringify(dataUser));
+            return true
         }
+        return false
     }
 
     const logout = () => {

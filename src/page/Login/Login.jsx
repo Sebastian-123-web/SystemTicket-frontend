@@ -1,9 +1,14 @@
-import { Button, Input, Spinner, Typography } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
+
+import { Button, Input, Spinner, Typography } from "@material-tailwind/react";
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 
 import { useLoginContext } from '../../context/LoginContext'
 
 export const Login = () => {
+
+    // MANEJO DE VER LA CONTRASEÑA
+    const [ showPassword, setShowPassword ] = useState(true)
 
     // OBTENER DATOS DE LOS INPUTS
     const [ dataLogin, setDataLogin ] = useState({
@@ -20,8 +25,9 @@ export const Login = () => {
 
     // VALIDAR INICIO DE SESION
     const { login } = useLoginContext()
+    const [ changeInputError, setChangeInputError] = useState(true)
     const handleLoginUser = async(collectLogin) => {
-        await login(collectLogin) ? console.log(login(collectLogin)) : console.log('error mail o pass')
+        login(collectLogin) ? setChangeInputError(true) : setChangeInputError(false)
     }
 
     // SPINNER DE CARGA
@@ -44,14 +50,19 @@ export const Login = () => {
                             name="email"
                             onChange={handleCollectLoginUser}
                         />
-                        <Input 
-                            label="Contraseña" 
-                            type="password"
-                            name="password"
-                            onChange={handleCollectLoginUser}
-                        />
+                        <div className="relative">
+                            <Input
+                                label="Contraseña" 
+                                type={ !showPassword ? '' : 'password' }
+                                name="password"
+                                onChange={handleCollectLoginUser}
+                            />
+                            <div className="absolute top-2.5 right-4">
+                                { !showPassword ? <EyeIcon className="w-5 h-5" onClick={()=>setShowPassword(true)} /> : <EyeSlashIcon className="w-5 h-5" onClick={()=>setShowPassword(false)} /> }
+                            </div>
+                        </div>
                         <Button 
-                            onClick={()=>handleLoginUser(dataLogin)}    
+                            onClick={()=>login(dataLogin)}    
                         >Iniciar Sesion</Button>
                     </div>
                 )
