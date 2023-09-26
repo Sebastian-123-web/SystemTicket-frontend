@@ -25,9 +25,9 @@ export const Login = () => {
 
     // VALIDAR INICIO DE SESION
     const { login } = useLoginContext()
-    const [ changeInputError, setChangeInputError] = useState(true)
+    const [ changeInputError, setChangeInputError] = useState(false)
     const handleLoginUser = async(collectLogin) => {
-        login(collectLogin) ? setChangeInputError(true) : setChangeInputError(false)
+        await login(collectLogin) ? setChangeInputError(false) : setChangeInputError(true)
     }
 
     // SPINNER DE CARGA
@@ -49,6 +49,7 @@ export const Login = () => {
                             type="email"
                             name="email"
                             onChange={handleCollectLoginUser}
+                            error={changeInputError}
                         />
                         <div className="relative">
                             <Input
@@ -56,13 +57,14 @@ export const Login = () => {
                                 type={ !showPassword ? '' : 'password' }
                                 name="password"
                                 onChange={handleCollectLoginUser}
+                                error={changeInputError}
                             />
                             <div className="absolute top-2.5 right-4">
                                 { !showPassword ? <EyeIcon className="w-5 h-5" onClick={()=>setShowPassword(true)} /> : <EyeSlashIcon className="w-5 h-5" onClick={()=>setShowPassword(false)} /> }
                             </div>
                         </div>
                         <Button 
-                            onClick={()=>login(dataLogin)}    
+                            onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}}    
                         >Iniciar Sesion</Button>
                     </div>
                 )
