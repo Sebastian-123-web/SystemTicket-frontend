@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
-import { Button, Input, Spinner, Typography } from "@material-tailwind/react";
+import { Button, Input, Spinner, Typography } from "@material-tailwind/react"
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 
 import { useLoginContext } from '../../context/LoginContext'
@@ -44,7 +44,7 @@ export const Login = () => {
                 ) : (
                     <div className="w-[400px] bg-white p-5 grid gap-5">
                         <Typography variant="h5" color="blue-gray">Sign Up</Typography>
-                        <Input 
+                        <Input
                             label="Correo"
                             type="email"
                             name="email"
@@ -53,7 +53,7 @@ export const Login = () => {
                         />
                         <div className="relative">
                             <Input
-                                label="Contraseña" 
+                                label="Contraseña"
                                 type={ !showPassword ? '' : 'password' }
                                 name="password"
                                 onChange={handleCollectLoginUser}
@@ -63,8 +63,8 @@ export const Login = () => {
                                 { !showPassword ? <EyeIcon className="w-5 h-5" onClick={()=>setShowPassword(true)} /> : <EyeSlashIcon className="w-5 h-5" onClick={()=>setShowPassword(false)} /> }
                             </div>
                         </div>
-                        <Button 
-                            onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}}    
+                        <Button
+                            onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}} 
                         >Iniciar Sesion</Button>
                     </div>
                 )
