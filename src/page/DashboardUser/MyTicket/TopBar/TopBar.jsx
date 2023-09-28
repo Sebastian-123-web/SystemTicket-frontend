@@ -32,8 +32,8 @@ export const TopBar = () => {
                         </div>
                     </MenuHandler>
                     <MenuList>
-                        <MenuItem>Configuracion</MenuItem>
                         <MenuItem>Perfil</MenuItem>
+                        <MenuItem>Configuracion</MenuItem>
                     </MenuList>
                 </Menu>
             </Card>
