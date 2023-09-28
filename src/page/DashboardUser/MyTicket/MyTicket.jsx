@@ -71,7 +71,7 @@ export const MyTicket = () => {
                 </Card>
 
                 <Card className="col-span-9 row-span-5 p-5">
-                    <table className="w-full min-w-max table-auto text-left">
+                    <table className="w-full min-w-max table-auto text-left border">
                         <thead>
                             <tr>
                                 <th className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
