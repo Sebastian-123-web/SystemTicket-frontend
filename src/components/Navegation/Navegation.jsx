@@ -1,5 +1,5 @@
 import { Card, List, ListItem, ListItemPrefix } from '@material-tailwind/react'
-import { TicketIcon, PlusCircleIcon, PowerIcon } from '@heroicons/react/24/solid'
+import { TicketIcon, PlusCircleIcon, InformationCircleIcon, PowerIcon } from '@heroicons/react/24/solid'
 
 import { useState } from 'react'
 import { useLoginContext } from '../../context/LoginContext'
@@ -9,17 +9,17 @@ const navigationMenu = [
     {
         url : "/dashboard",
         name : "Mis Tickets",
-        icon : "ticket-outline"
+        icon : <TicketIcon className="h-5 w-5" />
     },
     {
         url : "/dashboard/createticket",
         name : "Crear Ticket",
-        icon : "ticket-outline"
+        icon : <PlusCircleIcon className="h-5 w-5" />
     },
     {
         url : "/dashboard/about",
         name : "About dev",
-        icon : "code-outline"
+        icon : <InformationCircleIcon className="h-5 w-5" />
     }
 ]
 
@@ -37,26 +37,18 @@ export const Navegation = () => {
                 <div>Aqui ira un logo :3</div>
 
                 <List className='text-white'>
-                    {
+                    { 
                         navigationMenu.map((nav, i) => (
-                            <Link to={nav.url}>
-                                <ListItem key={i}>
+                            <Link key={i} to={nav.url} onClick={() => setActiveMenu(nav.url)} className={`${activeMenu==nav.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
+                                <ListItem>
                                     <ListItemPrefix>
-                                        <TicketIcon className="h-5 w-5" />
+                                        {nav.icon}
                                     </ListItemPrefix>
                                     {nav.name}
                                 </ListItem>
                             </Link>
                         ))
                     }
-                    {/* <ListItem>
-                        <Link to="/dashboard/createticket" className='flex flex-row'>
-                            <ListItemPrefix>
-                                <PlusCircleIcon className="h-5 w-5" />
-                            </ListItemPrefix>
-                            Crear Ticket
-                        </Link>
-                    </ListItem> */}
                 </List>
 
                 <List className='text-white'>

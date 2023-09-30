@@ -13,6 +13,9 @@ import {
         } from '@material-tailwind/react'
 import { MagnifyingGlassIcon, ComputerDesktopIcon, EllipsisVerticalIcon } from '@heroicons/react/24/solid'
 import { TopBar } from './TopBar/TopBar'
+import { Link } from 'react-router-dom';
+import { TitleBard } from './TitleBar/TitleBard';
+import { New } from '../New/New';
 
 const TABLE_HEAD = ["#", "Descripcion", "Importancia", "Estado", "Dispositivo", "Opciones"];
  
@@ -50,25 +53,10 @@ export const MyTicket = () => {
             <TopBar />
 
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
-                <Card className='col-span-9 row-span-1 p-5'>
-                    <div className='flex justify-between items-center h-full' >
-                        <Typography variant='h5'>Ticket Generados</Typography>
-                        <div className='relative'>
-                            <Input
-                                placeholder='Buscar'
-                                className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
-                                labelProps={{
-                                    className: "hidden",
-                                }}
-                            />
-                            <MagnifyingGlassIcon className='absolute right-3 top-2.5 w-5 h-5' />
-                        </div>
-                    </div>
-                </Card>
+                
+                <TitleBard />
 
-                <Card className='col-span-3 row-span-6 p-5'>
-                    <Typography variant='h5'>Noticias</Typography>
-                </Card>
+                <New col='3' row='6' />
 
                 <Card className="col-span-9 row-span-5 p-5">
                     <table className="w-full min-w-max table-auto text-left border">
@@ -173,7 +161,9 @@ export const MyTicket = () => {
                                             </IconButton>
                                         </MenuHandler>
                                         <MenuList>
-                                            <MenuItem>Información</MenuItem>
+                                            <Link to='/dashboard/8'>
+                                                <MenuItem>Información</MenuItem>
+                                            </Link>
                                             <MenuItem>Descargar Informe</MenuItem>
                                         </MenuList>
                                     </Menu>
