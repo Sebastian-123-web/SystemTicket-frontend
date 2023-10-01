@@ -17,6 +17,8 @@ import { Link } from 'react-router-dom';
 import { TitleBard } from './TitleBar/TitleBard';
 import { New } from '../New/New';
 
+import '../../../index.css'
+
 const TABLE_HEAD = ["#", "Descripcion", "Importancia", "Estado", "Dispositivo", "Opciones"];
  
 const TABLE_ROWS = [
@@ -56,7 +58,7 @@ export const MyTicket = () => {
                 
                 <TitleBard />
 
-                <New col='3' row='6' />
+                <New col='col-span-3' row='row-span-6' />
 
                 <Card className="col-span-9 row-span-5 p-5">
                     <table className="w-full min-w-max table-auto text-left border">

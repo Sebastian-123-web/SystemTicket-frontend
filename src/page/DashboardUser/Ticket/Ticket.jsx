@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { TopBar } from '../MyTicket/TopBar/TopBar'
 import { New } from '../New/New'
 import { Card, Typography, Chip, Input, Dialog, DialogBody  } from '@material-tailwind/react'
@@ -23,6 +23,10 @@ export const Ticket = () => {
  
     const handleOpen = () => setOpen((cur) => !cur);
 
+    // MANDAR EL URL DE LA IMAGEN AL MODAL
+    const [viewImg, setViewImg] = useState()
+    const handleViewImg = (img) => { setViewImg(img) }
+
     return (
         <>
             <TopBar />
@@ -35,7 +39,8 @@ export const Ticket = () => {
                     </Card>
                 </div>
                 
-                <New col='3' row='2' />
+                {/* COMPONENTE DE NOTICIAS  */}
+                <New col='col-span-3' row='col-span-2' />
 
                 <Card className='col-span-5 row-span-2 p-5 flex flex-row justify-between'>
                     <div className='flex flex-col justify-between'>
@@ -100,7 +105,7 @@ export const Ticket = () => {
                                 <div key={i} className='h-20 w-20'>
                                     <Card
                                         className="h-20 w-20 cursor-pointer overflow-hidden transition-opacity hover:opacity-90"
-                                        onClick={handleOpen}
+                                        onClick={() => {handleOpen();handleViewImg(image.imge)}}
                                     >
                                         <img
                                         alt="nature"
@@ -108,18 +113,18 @@ export const Ticket = () => {
                                         src={image.imge}
                                         />
                                     </Card>
-                                    <Dialog size="md" open={open} handler={handleOpen} className='p-3'>
-                                        <DialogBody divider={true} className="p-0">
-                                            <img
-                                                alt="nature"
-                                                className="h-[30rem] w-full object-cover object-center"
-                                                src={image.imge}
-                                            />
-                                        </DialogBody>
-                                    </Dialog>
                                 </div>
                             ) )
                         }
+                        <Dialog size="xl" open={open} handler={handleOpen} className='p-3'>
+                            <DialogBody divider={true} className="p-0">
+                                <img
+                                    alt="nature"
+                                    className="w-full object-cover object-center"
+                                    src={viewImg}
+                                />
+                            </DialogBody>
+                        </Dialog>
                     </div>
                 </Card>
             </div>
