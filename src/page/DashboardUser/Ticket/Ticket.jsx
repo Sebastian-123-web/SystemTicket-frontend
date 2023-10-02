@@ -3,7 +3,7 @@ import { TopBar } from '../MyTicket/TopBar/TopBar'
 import { New } from '../New/New'
 import { Card, Typography, Chip, Input, Dialog, DialogBody  } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
-import { ComputerDesktopIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { ComputerDesktopIcon, PaperAirplaneIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 
 const imagenes = [
     {
@@ -33,14 +33,19 @@ export const Ticket = () => {
 
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
                 <div className='col-span-9 row-span-2 '>
-                    <Link to={-1} className='pb-5'>Aqui retrocede</Link>
+                    <Link to={-1} className='pb-5 flex flex-row'>
+                        <Typography className='flex items-center text-[#9AAFC7]'>
+                            <ChevronLeftIcon className='w-5 h-5 mr-1' />
+                            Atras
+                        </Typography>
+                    </Link>
                     <Card className=' p-5'>
-                    hola
+                        hola
                     </Card>
                 </div>
                 
                 {/* COMPONENTE DE NOTICIAS  */}
-                <New col='col-span-3' row='col-span-2' />
+                <New col='col-span-3' row='row-span-2' />
 
                 <Card className='col-span-5 row-span-2 p-5 flex flex-row justify-between'>
                     <div className='flex flex-col justify-between'>
@@ -116,7 +121,7 @@ export const Ticket = () => {
                                 </div>
                             ) )
                         }
-                        <Dialog size="xl" open={open} handler={handleOpen} className='p-3'>
+                        <Dialog size="lg" open={open} handler={handleOpen} className='p-3'>
                             <DialogBody divider={true} className="p-0">
                                 <img
                                     alt="nature"
