@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TopBar } from '../MyTicket/TopBar/TopBar'
 import { New } from '../New/New'
-import { Card, Typography, Chip, Input, Dialog, DialogBody  } from '@material-tailwind/react'
+import { Card, Typography, Chip, Input, Dialog, DialogBody, Stepper, Step, Button } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
 import { ComputerDesktopIcon, PaperAirplaneIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
 
@@ -27,6 +27,14 @@ export const Ticket = () => {
     const [viewImg, setViewImg] = useState()
     const handleViewImg = (img) => { setViewImg(img) }
 
+    // BARRA DE PROGRO DE ESTADOS
+    const [activeStep, setActiveStep] = React.useState(0);
+    const [isLastStep, setIsLastStep] = React.useState(false);
+    const [isFirstStep, setIsFirstStep] = React.useState(false);
+    
+    const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
+    const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
     return (
         <>
             <TopBar />
@@ -39,8 +47,67 @@ export const Ticket = () => {
                             Atras
                         </Typography>
                     </Link>
-                    <Card className=' p-5'>
-                        hola
+                    <Card className='h-[calc(100%-46px)] py-5 px-8'>
+                        <Stepper
+                            activeStep={activeStep}
+                            isLastStep={(value) => setIsLastStep(value)}
+                            isFirstStep={(value) => setIsFirstStep(value)}
+                        >
+                            <Step onClick={() => setActiveStep(0)}>
+                                <div className="absolute bottom-[-30px] w-max text-center">
+                                    <Typography
+                                        variant="h6"
+                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
+                                        Nuevo
+                                    </Typography>
+                                </div>
+                            </Step>
+                            <Step onClick={() => setActiveStep(1)}>
+                                <div className="absolute bottom-[-30px] w-max text-center">
+                                    <Typography
+                                        variant="h6"
+                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
+                                        Abierto
+                                    </Typography>
+                                </div>
+                            </Step>
+                            <Step onClick={() => setActiveStep(2)}>
+                                <div className="absolute bottom-[-30px] w-max text-center">
+                                    <Typography
+                                        variant="h6"
+                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
+                                        Pendiente
+                                    </Typography>
+                                </div>
+                            </Step>
+                            <Step onClick={() => setActiveStep(3)}>
+                                <div className="absolute bottom-[-30px] w-max text-center">
+                                    <Typography
+                                        variant="h6"
+                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
+                                        En proceso
+                                    </Typography>
+                                </div>
+                            </Step>
+                            <Step onClick={() => setActiveStep(4)}>
+                                <div className="absolute bottom-[-30px] w-max text-center">
+                                    <Typography
+                                        variant="h6"
+                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
+                                        Resuelto
+                                    </Typography>
+                                </div>
+                            </Step>
+                        </Stepper>
+
+                        {/* <div className="flex justify-between">
+                            <Button onClick={handlePrev} disabled={isFirstStep}>
+                            Prev
+                            </Button>
+                            <Button onClick={handleNext} disabled={isLastStep}>
+                            Next
+                            </Button>
+                        </div> */}
                     </Card>
                 </div>
                 

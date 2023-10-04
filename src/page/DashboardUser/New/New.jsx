@@ -5,7 +5,7 @@ export const New = ({col,row}) => {
   return (
     <>
         <Card className={`${col} ${row} p-5`}>
-            <Typography variant='h5'>Noticias {row} </Typography>
+            <Typography variant='h5'>Noticias</Typography>
         </Card>
     </>
   )
