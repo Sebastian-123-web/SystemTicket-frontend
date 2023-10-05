@@ -1,9 +1,16 @@
-import React, { useState } from 'react'
+
+// TERCEROS
+import { Card, Typography, Chip, Input } from '@material-tailwind/react'
+import { ComputerDesktopIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
+
+// FUNCIONES DEL PROYECTO
+
+// COMPONENTE DEL PROYECTO
 import { TopBar } from '../MyTicket/TopBar/TopBar'
 import { New } from '../New/New'
-import { Card, Typography, Chip, Input, Dialog, DialogBody, Stepper, Step, Button } from '@material-tailwind/react'
-import { Link } from 'react-router-dom'
-import { ComputerDesktopIcon, PaperAirplaneIcon, ChevronLeftIcon } from '@heroicons/react/24/solid'
+import { StatusProgressBar } from './StatusProgressBar/StatusProgressBar'
+import { ViewImage } from './ViewImage/ViewImage'
+import { Back } from '../../../components/Back/Back'
 
 const imagenes = [
     {
@@ -19,96 +26,16 @@ const imagenes = [
 
 export const Ticket = () => {
 
-    const [open, setOpen] = React.useState(false);
- 
-    const handleOpen = () => setOpen((cur) => !cur);
-
-    // MANDAR EL URL DE LA IMAGEN AL MODAL
-    const [viewImg, setViewImg] = useState()
-    const handleViewImg = (img) => { setViewImg(img) }
-
-    // BARRA DE PROGRO DE ESTADOS
-    const [activeStep, setActiveStep] = React.useState(0);
-    const [isLastStep, setIsLastStep] = React.useState(false);
-    const [isFirstStep, setIsFirstStep] = React.useState(false);
-    
-    const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
-    const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
-
     return (
         <>
+            {/* BARRA SUPERIOR DE TITULO Y USUARIO */}
             <TopBar />
 
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
                 <div className='col-span-9 row-span-2 '>
-                    <Link to={-1} className='pb-5 flex flex-row'>
-                        <Typography className='flex items-center text-[#9AAFC7]'>
-                            <ChevronLeftIcon className='w-5 h-5 mr-1' />
-                            Atras
-                        </Typography>
-                    </Link>
-                    <Card className='h-[calc(100%-46px)] py-5 px-8'>
-                        <Stepper
-                            activeStep={activeStep}
-                            isLastStep={(value) => setIsLastStep(value)}
-                            isFirstStep={(value) => setIsFirstStep(value)}
-                        >
-                            <Step onClick={() => setActiveStep(0)}>
-                                <div className="absolute bottom-[-30px] w-max text-center">
-                                    <Typography
-                                        variant="h6"
-                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
-                                        Nuevo
-                                    </Typography>
-                                </div>
-                            </Step>
-                            <Step onClick={() => setActiveStep(1)}>
-                                <div className="absolute bottom-[-30px] w-max text-center">
-                                    <Typography
-                                        variant="h6"
-                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
-                                        Abierto
-                                    </Typography>
-                                </div>
-                            </Step>
-                            <Step onClick={() => setActiveStep(2)}>
-                                <div className="absolute bottom-[-30px] w-max text-center">
-                                    <Typography
-                                        variant="h6"
-                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
-                                        Pendiente
-                                    </Typography>
-                                </div>
-                            </Step>
-                            <Step onClick={() => setActiveStep(3)}>
-                                <div className="absolute bottom-[-30px] w-max text-center">
-                                    <Typography
-                                        variant="h6"
-                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
-                                        En proceso
-                                    </Typography>
-                                </div>
-                            </Step>
-                            <Step onClick={() => setActiveStep(4)}>
-                                <div className="absolute bottom-[-30px] w-max text-center">
-                                    <Typography
-                                        variant="h6"
-                                        color={activeStep === 0 ? "blue-gray" : "gray"}>
-                                        Resuelto
-                                    </Typography>
-                                </div>
-                            </Step>
-                        </Stepper>
+                    <Back />
 
-                        {/* <div className="flex justify-between">
-                            <Button onClick={handlePrev} disabled={isFirstStep}>
-                            Prev
-                            </Button>
-                            <Button onClick={handleNext} disabled={isLastStep}>
-                            Next
-                            </Button>
-                        </div> */}
-                    </Card>
+                    <StatusProgressBar />
                 </div>
                 
                 {/* COMPONENTE DE NOTICIAS  */}
@@ -170,35 +97,8 @@ export const Ticket = () => {
 
 
                 {/* VISUALIZACION DE IMAGENES  */}
-                <Card className='col-span-5 row-span-3 p-5'>
-                    <div className='flex items-center justify-between w-full h-full'>
-                        {
-                            imagenes.map( (image,i) => (
-                                <div key={i} className='h-20 w-20'>
-                                    <Card
-                                        className="h-20 w-20 cursor-pointer overflow-hidden transition-opacity hover:opacity-90"
-                                        onClick={() => {handleOpen();handleViewImg(image.imge)}}
-                                    >
-                                        <img
-                                        alt="nature"
-                                        className="h-full w-full object-cover object-center"
-                                        src={image.imge}
-                                        />
-                                    </Card>
-                                </div>
-                            ) )
-                        }
-                        <Dialog size="lg" open={open} handler={handleOpen} className='p-3'>
-                            <DialogBody divider={true} className="p-0">
-                                <img
-                                    alt="nature"
-                                    className="w-full object-cover object-center"
-                                    src={viewImg}
-                                />
-                            </DialogBody>
-                        </Dialog>
-                    </div>
-                </Card>
+                <ViewImage imagenes={imagenes} />
+
             </div>
         </>
     )
