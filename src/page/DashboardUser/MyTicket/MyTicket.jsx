@@ -21,10 +21,10 @@ const TABLE_HEAD = ["#", "Descripcion", "Importancia", "Estado", "Dispositivo", 
  
 const TABLE_ROWS = [
   {
-    nTicket: "John Michael",
-    titulo: "Manager",
-    importancia: "23/04/18",
-    estado: "",
+    nTicket: 1,
+    titulo: "Error con el SIDIGE",
+    importancia: "Urgente",
+    estado: "En proceso",
     dispositivo: "",
     opciones: ""
   }
