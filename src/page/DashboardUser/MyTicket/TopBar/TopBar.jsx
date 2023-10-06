@@ -8,7 +8,7 @@ import {
     Typography,
     Card
 } from '@material-tailwind/react'
-import { TicketIcon } from '@heroicons/react/24/solid'
+import { TicketIcon, MoonIcon, UserIcon, Cog8ToothIcon } from '@heroicons/react/24/solid'
 
 export const TopBar = () => {
     return (
@@ -21,7 +21,7 @@ export const TopBar = () => {
                 
                 <Menu>
                     <MenuHandler>
-                        <div className='flex flex-row items-center cursor-pointer'>
+                        <div className='flex flex-row items-center cursor-pointer py-3 px-6 rounded-lg text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20'>
                             <Avatar 
                                 src='https://avatars.githubusercontent.com/u/69646937?v=4' 
                                 alt="avatar"
@@ -32,8 +32,9 @@ export const TopBar = () => {
                         </div>
                     </MenuHandler>
                     <MenuList>
-                        <MenuItem>Perfil</MenuItem>
-                        <MenuItem>Configuracion</MenuItem>
+                        <MenuItem className='flex items-center justify-start'><UserIcon className='w-4 h-4 mr-1' /> Perfil</MenuItem>
+                        <MenuItem className='flex items-center justify-start'><Cog8ToothIcon className='w-4 h-4 mr-1' /> Configuración</MenuItem>
+                        <MenuItem className='flex items-center justify-start'><MoonIcon className='w-4 h-4 mr-1' /> Modo Oscuro</MenuItem>
                     </MenuList>
                 </Menu>
             </Card>

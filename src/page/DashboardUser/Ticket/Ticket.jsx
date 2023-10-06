@@ -1,7 +1,7 @@
 
 // TERCEROS
-import { Card, Typography, Chip, Input } from '@material-tailwind/react'
-import { ComputerDesktopIcon, PaperAirplaneIcon } from '@heroicons/react/24/solid'
+import { Card, Typography, Chip, Input, ButtonGroup, Button, Tooltip } from '@material-tailwind/react'
+import { ComputerDesktopIcon, PaperAirplaneIcon, CheckCircleIcon, DocumentArrowDownIcon } from '@heroicons/react/24/solid'
 
 // FUNCIONES DEL PROYECTO
 
@@ -33,7 +33,17 @@ export const Ticket = () => {
 
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
                 <div className='col-span-9 row-span-2 '>
-                    <Back />
+                    <div className='flex items-center justify-between'>
+                        <Back />
+                        <div className='mb-3'>
+                            <Tooltip content="Marcar como Ticket resuelto">
+                                <Button className='mr-2'><CheckCircleIcon className='w-4' /> </Button>
+                            </Tooltip>
+                            <Tooltip content="Descargar informe completo sobre la incidencia">
+                                <Button className='mr-2'><DocumentArrowDownIcon className='w-4' /> </Button>
+                            </Tooltip>
+                        </div>
+                    </div>
 
                     <StatusProgressBar />
                 </div>
@@ -74,13 +84,13 @@ export const Ticket = () => {
                         <span className='w-3 h-3 mr-2 bg-green-800 rounded-full'></span>
                         <Typography variant='h5'>Chat</Typography>
                     </div>
-                    <div className='py-1 px-3 mb-2 text-start text-white bg-blue-500 rounded-t-md rounded-br-lg'>
+                    <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
                         holaaaaaaaaa
                     </div>
-                    <div className='py-1 px-3 mb-2 text-end text-white bg-blue-gray-600 rounded-t-md rounded-bl-lg'>
+                    <div className='py-1 px-3 mb-2 text-end text-white bg-black rounded-t-md rounded-bl-lg'>
                         Ya estamos resolviendo su problema
                     </div>
-                    <div className='py-1 px-3 mb-2 text-start text-white bg-blue-500 rounded-t-md rounded-br-lg'>
+                    <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
                         Ya era hora
                     </div>
                     <div className='absolute bottom-5'>
