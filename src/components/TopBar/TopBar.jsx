@@ -8,17 +8,25 @@ import {
     Typography,
     Card
 } from '@material-tailwind/react'
-import { TicketIcon, MoonIcon, UserIcon, Cog8ToothIcon } from '@heroicons/react/24/solid'
+import { MoonIcon, UserIcon, Cog8ToothIcon } from '@heroicons/react/24/solid'
 
-export const TopBar = () => {
+import { dataSection } from "../../data/dataSection"
+
+export const TopBar = ({TitleSection}) => {
+
+    const title = dataSection.find((sect) => sect.name == TitleSection)
+
     return (
         <>
             <Card className='h-[100px] p-5 flex flex-row items-center justify-between'>
-                <Typography variant='h3' className='flex flex-row' color="blue-gray">
-                    <TicketIcon className='w-10 h-10 mr-2' /> 
-                    Mis Tickets
-                </Typography>
-                
+                <div className='flex justify-center flex-row '>
+                    <Typography variant='h3' color='blue-gray' className='w-10 mr-2'>
+                        { title.icon }
+                    </Typography>
+                    <Typography variant='h3' className='flex flex-row items-center justify-center' color="blue-gray">
+                        { title.name }
+                    </Typography>
+                </div>
                 <Menu>
                     <MenuHandler>
                         <div className='flex flex-row items-center cursor-pointer py-3 px-6 rounded-lg text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20'>

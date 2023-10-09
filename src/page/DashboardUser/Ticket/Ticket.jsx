@@ -1,12 +1,12 @@
 
 // TERCEROS
-import { Card, Typography, Chip, Input, ButtonGroup, Button, Tooltip } from '@material-tailwind/react'
+import { Card, Typography, Chip, Input, Button, Tooltip } from '@material-tailwind/react'
 import { ComputerDesktopIcon, PaperAirplaneIcon, CheckCircleIcon, DocumentArrowDownIcon } from '@heroicons/react/24/solid'
 
 // FUNCIONES DEL PROYECTO
 
 // COMPONENTE DEL PROYECTO
-import { TopBar } from '../MyTicket/TopBar/TopBar'
+import { TopBar } from '../../../components/TopBar/TopBar'
 import { New } from '../New/New'
 import { StatusProgressBar } from './StatusProgressBar/StatusProgressBar'
 import { ViewImage } from './ViewImage/ViewImage'
@@ -29,13 +29,13 @@ export const Ticket = () => {
     return (
         <>
             {/* BARRA SUPERIOR DE TITULO Y USUARIO */}
-            <TopBar />
+            <TopBar TitleSection={"Mis Tickets"} />
 
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
                 <div className='col-span-9 row-span-2 '>
-                    <div className='flex items-center justify-between'>
+                    <div className='flex items-center justify-between mb-2'>
                         <Back />
-                        <div className='mb-3'>
+                        <div className=''>
                             <Tooltip content="Marcar como Ticket resuelto">
                                 <Button className='mr-2'><CheckCircleIcon className='w-4' /> </Button>
                             </Tooltip>
@@ -79,32 +79,41 @@ export const Ticket = () => {
                     <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aut minima, saepe quia optio perferendis excepturi nesciunt, dolorum accusantium ipsam pariatur. Soluta illum placeat ex architecto exercitationem in, nihil molestiae.</Typography>
                 </Card>
 
-                <Card className='col-span-3 row-span-5 relative p-5'>
+                <Card className='col-span-3 row-span-5 relative p-5 flex justify-between'>
                     <div className='flex items-center mb-3'>
                         <span className='w-3 h-3 mr-2 bg-green-800 rounded-full'></span>
                         <Typography variant='h5'>Chat</Typography>
                     </div>
-                    <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
-                        holaaaaaaaaa
+                    <div className='overflow-y-auto h-[calc(100%-77px)] mb-4 flex flex-col-reverse rounded-lg chat-container'>
+                        <div className='flex flex-col'>
+                            <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
+                                holaaaaaaaaa
+                            </div>
+                            <div className='py-1 px-3 mb-2 text-end text-white bg-black rounded-t-md rounded-bl-lg'>
+                                Ya estamos resolviendo su problema
+                            </div>
+                            <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
+                                Ya era hora
+                            </div>
+                            <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
+                                llevo una semana con este problema y aun no lo solucionan
+                            </div>
+                            <div className='py-1 px-3 text-end text-white bg-black rounded-t-md rounded-bl-lg'>
+                                Disculpe la demora pero puede irse a la mrd, si quiere le consigo el vehiculo
+                            </div>
+                        </div>
                     </div>
-                    <div className='py-1 px-3 mb-2 text-end text-white bg-black rounded-t-md rounded-bl-lg'>
-                        Ya estamos resolviendo su problema
-                    </div>
-                    <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
-                        Ya era hora
-                    </div>
-                    <div className='absolute bottom-5'>
-                        <Input 
+                    <div className="relative">
+                        <Input
                             placeholder='Enviar un mensaje'
-                            className="!border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
+                            className="w-full pr-8 !border !border-gray-300 bg-white text-gray-900 shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-900 focus:!border-t-gray-900 focus:ring-gray-900/10"
                             labelProps={{
                                 className: "hidden",
                             }}
-                            />
+                        />
                         <PaperAirplaneIcon className='absolute top-1.5 right-1 w-6 h-6' />
                     </div>
                 </Card>
-
 
                 {/* VISUALIZACION DE IMAGENES  */}
                 <ViewImage imagenes={imagenes} />

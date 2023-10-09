@@ -2,14 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@media screen and ( width <= 1380px ){
-    .ocultar-importancia{
-        display: none;
-    }
+.chat-container::-webkit-scrollbar {
+    width: 10px;
 }
 
-@media screen and ( width <= 1207px ){
-    .ocultar-dispositivo{
-        display: none;
-    }
+.chat-container::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #d5dae4;
 }

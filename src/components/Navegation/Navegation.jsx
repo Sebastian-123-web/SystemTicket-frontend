@@ -1,27 +1,15 @@
-import { Card, List, ListItem, ListItemPrefix } from '@material-tailwind/react'
-import { TicketIcon, PlusCircleIcon, InformationCircleIcon, PowerIcon } from '@heroicons/react/24/solid'
-
+// TERCEROS
 import { useState } from 'react'
-import { useLoginContext } from '../../context/LoginContext'
 import { Link } from 'react-router-dom'
+import { Card, List, ListItem, ListItemPrefix, Typography } from '@material-tailwind/react'
+import { PowerIcon } from '@heroicons/react/24/solid'
 
-const navigationMenu = [
-    {
-        url : "/dashboard",
-        name : "Mis Tickets",
-        icon : <TicketIcon className="h-5 w-5" />
-    },
-    {
-        url : "/dashboard/createticket",
-        name : "Crear Ticket",
-        icon : <PlusCircleIcon className="h-5 w-5" />
-    },
-    {
-        url : "/dashboard/about",
-        name : "About dev",
-        icon : <InformationCircleIcon className="h-5 w-5" />
-    }
-]
+// FUNCIONES DEL PROYECTO
+import { useLoginContext } from '../../context/LoginContext'
+import { dataSection } from '../../data/dataSection'
+
+// COMPONENTES DEL PROYECTO
+
 
 export const Navegation = () => {
 
@@ -38,13 +26,15 @@ export const Navegation = () => {
 
                 <List className='text-white'>
                     { 
-                        navigationMenu.map((nav, i) => (
-                            <Link key={i} to={nav.url} onClick={() => setActiveMenu(nav.url)} className={`${activeMenu==nav.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
+                        dataSection.map((sect, i) => (
+                            <Link key={i} to={sect.url} onClick={() => setActiveMenu(sect.url)} className={`${activeMenu==sect.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
                                 <ListItem>
                                     <ListItemPrefix>
-                                        {nav.icon}
+                                        <Typography className='w-5'>
+                                            {sect.icon}
+                                        </Typography>
                                     </ListItemPrefix>
-                                    {nav.name}
+                                    {sect.name}
                                 </ListItem>
                             </Link>
                         ))
