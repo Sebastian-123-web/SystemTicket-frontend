@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Stepper, Step, Button, Typography } from '@material-tailwind/react'
+import { Card, Stepper, Step, Button, Typography, Input, Textarea } from '@material-tailwind/react'
 
 import { TopBar } from '../../../components/TopBar/TopBar'
 import { New } from '../New/New'
@@ -17,8 +17,8 @@ export const CreateTicket = () => {
         <>
             <TopBar TitleSection={"Crear Ticket"} />
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
-                <Card className='p-5 col-span-9 row-span-6'>
-                    <div className="w-full py-4 px-8 flex justify-between flex-col">
+                <Card className='p-5 col-span-9 row-span-6 flex items-center'>
+                    <div className="w-[70%] py-4 px-8 flex justify-between flex-col">
                         <Stepper
                             activeStep={activeStep}
                             isLastStep={(value) => setIsLastStep(value)}
@@ -34,6 +34,9 @@ export const CreateTicket = () => {
                             <Typography>
                                 Descricion brave:
                             </Typography>
+                            <Input label='Descripcion breve' />
+                            <Textarea />
+                            <Input label='Codigo de Anydesk' />
                         </div>
 
                         <div className="mt-16 flex justify-between">

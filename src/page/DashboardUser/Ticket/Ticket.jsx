@@ -79,6 +79,8 @@ export const Ticket = () => {
                     <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aut minima, saepe quia optio perferendis excepturi nesciunt, dolorum accusantium ipsam pariatur. Soluta illum placeat ex architecto exercitationem in, nihil molestiae.</Typography>
                 </Card>
 
+
+                {/* AQUI ESTA EL CHAT */}
                 <Card className='col-span-3 row-span-5 relative p-5 flex justify-between'>
                     <div className='flex items-center mb-3'>
                         <span className='w-3 h-3 mr-2 bg-green-800 rounded-full'></span>
@@ -86,7 +88,7 @@ export const Ticket = () => {
                     </div>
                     <div className='overflow-y-auto h-[calc(100%-77px)] mb-4 flex flex-col-reverse rounded-lg chat-container'>
                         <div className='flex flex-col'>
-                            <div className='py-1 px-3 mb-2 text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
+                            <div className='py-1 px-3 mb-2 table text-start text-black bg-[#e0e0e0] rounded-t-md rounded-br-lg'>
                                 holaaaaaaaaa
                             </div>
                             <div className='py-1 px-3 mb-2 text-end text-white bg-black rounded-t-md rounded-bl-lg'>
