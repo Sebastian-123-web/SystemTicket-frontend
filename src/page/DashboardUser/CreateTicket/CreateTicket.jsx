@@ -1,5 +1,8 @@
 import React from 'react'
 import { Card, Stepper, Step, Button, Typography, Input, Textarea } from '@material-tailwind/react'
+import { ComputerDesktopIcon, DevicePhoneMobileIcon, PrinterIcon } from '@heroicons/react/24/solid'
+
+import '../../../index.css'
 
 import { TopBar } from '../../../components/TopBar/TopBar'
 import { New } from '../New/New'
@@ -29,15 +32,93 @@ export const CreateTicket = () => {
                             <Step onClick={() => setActiveStep(1)}>2</Step>
                             <Step onClick={() => setActiveStep(2)}>3</Step>
                         </Stepper>
-
-                        <div className=''>
-                            <Typography>
-                                Descricion brave:
-                            </Typography>
-                            <Input label='Descripcion breve' />
-                            <Textarea />
-                            <Input label='Codigo de Anydesk' />
-                        </div>
+                        {
+                            activeStep === 0 && (
+                                <div className='flex flex-col gap-3'>
+                                    <div>
+                                        <Typography>Descripcion breve:</Typography>
+                                        <Input
+                                            placeholder="Ej.: Error abrir SIDIGE"
+                                            className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                                            labelProps={{
+                                            className: "before:content-none after:content-none",
+                                            }}
+                                        />
+                                    </div>
+                                    <div>
+                                        <Typography>Detalle el incidente:</Typography>
+                                        <Textarea
+                                            placeholder="Ej.: Al momento de ingresar al SIDIGE me aparece un mensaje de error y luego se cierra"
+                                            className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                                            labelProps={{
+                                            className: "before:content-none after:content-none",
+                                            }}
+                                        />
+                                    </div>
+                                    <div>
+                                        <Typography>Codigo Anydesk:</Typography>
+                                        <Input
+                                            placeholder="Ej.: 1 951 654 785"
+                                            className="!border-t-blue-gray-200 focus:!border-t-gray-900"
+                                            labelProps={{
+                                            className: "before:content-none after:content-none",
+                                            }}
+                                        />
+                                    </div>
+                                </div>
+                            )
+                        }
+                        {
+                            activeStep === 1 && (
+                                <div>
+                                    <div className='radioDevice'>
+                                        <Typography>Seleccione el dispositivo:</Typography>
+                                        <div className='radioDevice flex justify-between mb-4'>
+                                            <label>
+                                                <input type="radio" name='device' value="desktop" className='none' />
+                                                <div 
+                                                    className={`w-16 h-16 border border-slate-300 bg-[#fff] rounded-lg flex justify-center items-center text-slate-300 hover:bg-[#270722b3] hover:text-[#fff] duration-300 cursor-pointer`}
+                                                    title="Computadora">
+                                                        <p className="text-3xl">
+                                                            <ComputerDesktopIcon className='w-8' />
+                                                        </p>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name='device' value="laptop" className='none' />
+                                                <div 
+                                                    className={`w-16 h-16 border border-slate-300 bg-[#fff] rounded-lg flex justify-center items-center text-slate-300 hover:bg-[#270722b3] hover:text-[#fff] duration-300 cursor-pointer`}
+                                                    title="Laptop">
+                                                        <p className="text-3xl">
+                                                            L
+                                                        </p>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name='device' value="movil" className='none' />
+                                                <div 
+                                                    className={`w-16 h-16 border border-slate-300 bg-[#fff] rounded-lg flex justify-center items-center text-slate-300 hover:bg-[#270722b3] hover:text-[#fff] duration-300 cursor-pointer`}
+                                                    title="Celular">
+                                                        <p className="text-3xl">
+                                                            <DevicePhoneMobileIcon className='w-8' />
+                                                        </p>
+                                                </div>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name='device' value="impresora" className='none' />
+                                                <div 
+                                                    className={`w-16 h-16 border border-slate-300 bg-[#fff] rounded-lg flex justify-center items-center text-slate-300 hover:bg-[#270722b3] hover:text-[#fff] duration-300 cursor-pointer`} 
+                                                    title="Impresora">
+                                                        <p className="text-3xl">
+                                                            <PrinterIcon className='w-8' />
+                                                        </p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        }
 
                         <div className="mt-16 flex justify-between">
                             <Button onClick={handlePrev} disabled={isFirstStep}>

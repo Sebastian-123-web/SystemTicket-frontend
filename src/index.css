@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+.radioDevice input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.radioDevice input:checked+div{
+    background-color: #270722;
+    color: #fff;
+}
+
 .chat-container::-webkit-scrollbar {
     width: 10px;
 }

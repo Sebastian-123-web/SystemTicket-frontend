@@ -14,10 +14,13 @@ import { dataSection } from '../../data/dataSection'
 export const Navegation = () => {
 
     // ACTIVAR LA OPCION DE MENU SELECCIONADA
-    const [activeMenu, setActiveMenu] = useState("/dashboard")
+    const [activeMenu, setActiveMenu] = useState("")
 
     // CERRAR SESION
     const { logout } = useLoginContext()
+
+    var URLactual = window.location;
+    alert(URLactual);
 
     return (
         <>
