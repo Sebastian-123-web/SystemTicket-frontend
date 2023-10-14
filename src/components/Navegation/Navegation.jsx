@@ -13,14 +13,15 @@ import { dataSection } from '../../data/dataSection'
 
 export const Navegation = () => {
 
-    // ACTIVAR LA OPCION DE MENU SELECCIONADA
-    const [activeMenu, setActiveMenu] = useState("")
+    // OBTENGO EL URL ACTUAL DE LA APP
+    var URLactual = window.location 
+
+    // ACTIVAR LA OPCION DE MENU SELECCIONADA 
+    // COLOCO POR DEFECTO LA URL ACTUAL DE LA APP PARA QUE AL REFRESCAR MARQUE EN LA NAVEGACION EL CORRECTO
+    const [activeMenu, setActiveMenu] = useState(URLactual.hash.replace('#',''))
 
     // CERRAR SESION
     const { logout } = useLoginContext()
-
-    var URLactual = window.location;
-    alert(URLactual);
 
     return (
         <>

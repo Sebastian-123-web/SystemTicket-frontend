@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState } from 'react'
 import { Card, Stepper, Step, Button, Typography, Input, Textarea } from '@material-tailwind/react'
 import { ComputerDesktopIcon, DevicePhoneMobileIcon, PrinterIcon } from '@heroicons/react/24/solid'
 
@@ -9,12 +9,27 @@ import { New } from '../New/New'
 
 export const CreateTicket = () => {
 
-    const [activeStep, setActiveStep] = React.useState(0);
-    const [isLastStep, setIsLastStep] = React.useState(false);
-    const [isFirstStep, setIsFirstStep] = React.useState(false);
+    const [activeStep, setActiveStep] = useState(0);
+    const [isLastStep, setIsLastStep] = useState(false);
+    const [isFirstStep, setIsFirstStep] = useState(false);
 
     const handleNext = () => !isLastStep && setActiveStep((cur) => cur + 1);
     const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
+
+
+    // VISTA PREVIA DE LA IMAGEN
+    const [imgPreview, setImgPreview] = useState("")
+    const imagenPreview = (e) => {
+        if(e.target.files[0]){
+            const reader = new FileReader()
+            reader.onload = function(e){
+                setImgPreview(e.target.result)
+            }
+            reader.readAsDataURL(e.target.files[0])
+        }else{
+            setImgPreview("")
+        }
+    }
 
     return (
         <>
@@ -114,6 +129,14 @@ export const CreateTicket = () => {
                                                         </p>
                                                 </div>
                                             </label>
+                                        </div>
+                                        <div className='relative mb-4'>
+                                            <p className='mb-3'>Añadir una imagen: <span className='text-[#9AAFC7]'>(Opcional)</span></p>
+                                            <div className={`absolute ${imgPreview ? "hidden" : "flex"} justify-center items-center w-full h-[80px] rounded-md bg-[#FFF] border border-slate-300`}>
+                                                <label htmlFor="imagen" className='text-[#9AAFC7]' ><ion-icon name="image-outline"></ion-icon> Añadir imagen</label>
+                                            </div>
+                                            <img src={`${imgPreview}`} alt="" className={`${imgPreview ? "" : "hidden"} absolute h-[80px] rounded-md bg-[#FFF] border border-slate-300 left-[50%] translate-x-[-50%]`} />
+                                            <input type="file" id='imagen' multiple className='opacity-0 w-full h-[80px]' onChange={imagenPreview} />
                                         </div>
                                     </div>
                                 </div>
