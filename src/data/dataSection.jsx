@@ -1,4 +1,4 @@
-import { TicketIcon, PlusCircleIcon, InformationCircleIcon} from '@heroicons/react/24/solid'
+import { TicketIcon, PlusCircleIcon, InformationCircleIcon, StarIcon} from '@heroicons/react/24/solid'
 
 export const dataSection = [
     {
@@ -12,8 +12,8 @@ export const dataSection = [
         icon : <PlusCircleIcon />
     },
     {
-        url : "/dashboard/about",
-        name : "About dev",
-        icon : <InformationCircleIcon />
+        url : "/dashboard/valoracion",
+        name : "Valoracion",
+        icon : <StarIcon />
     }
 ]
