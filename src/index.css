@@ -9,7 +9,7 @@
     height: 0;
 }
 .radioDevice input:checked+div{
-    background-color: #270722;
+    background-color: #212121;
     color: #fff;
 }
 
