@@ -26,7 +26,6 @@ export const CreateTicket = () => {
                 const reader = new FileReader()
                 reader.onload = function(e){
                     img.push(e.target.result)
-                    console.log(e.target.result)
                     setImgPreview(img)
                 }
                 reader.readAsDataURL(e.target.files[i])

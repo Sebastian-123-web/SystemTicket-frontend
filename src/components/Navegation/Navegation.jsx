@@ -25,7 +25,7 @@ export const Navegation = () => {
 
     return (
         <>
-            <Card className='h-[calc(100vh-50px)] w-[250px] p-7 m-6 bg-[#212121] text-white flex justify-between items-center flex-col'>
+            <Card className='h-[calc(100vh-50px)] w-[250px] p-7 my-6 ml-6 bg-[#212121] text-white flex justify-between items-center flex-col'>
                 <div>Aqui ira un logo :3</div>
 
                 <List className='text-white'>
