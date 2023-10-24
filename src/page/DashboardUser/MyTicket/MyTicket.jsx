@@ -35,92 +35,12 @@ export const MyTicket = () => {
                 <New col='col-span-3' row='row-span-6' />
 
                 <Card className="col-span-9 row-span-5 p-5">
-                    {/* <table className="w-full min-w-max table-auto text-left border">
-                        <thead>
-                            <tr>
-                                {
-                                    TABLE_HEAD.map((valor,key)=>(
-                                        <th key={key} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
-                                            <div className={`w-full ${valor == "Descripcion" ? " " : "flex justify-center"}`}>
-                                                <Typography
-                                                    variant="small"
-                                                    color="blue-gray"
-                                                    className="font-normal leading-none opacity-70"
-                                                >
-                                                {valor}
-                                                </Typography>
-                                            </div>
-                                        </th>
-                                    ))
-                                }
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr className="even:bg-blue-gray-50/50">
-                                <td className="p-4">
-                                    <Typography color="blue-gray" variant="h6" >1</Typography>
-                                </td>
-                                <td className="p-4">
-                                    <Typography color="blue-gray" variant="h6" >Error en SIDIGE</Typography>
-                                    <Typography variant="small" color="blue-gray" className="font-normal">
-                                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                    </Typography>
-                                </td>
-                                <td className="p-4">
-                                    <div className='flex justify-center'>
-                                        <Chip
-                                            variant="outlined"
-                                            color="red"
-                                            size="sm"
-                                            value="Urgente"
-                                            className="w-[100px] text-center"
-                                        />
-                                    </div>
-                                </td>
-                                <td className="p-4">
-                                    <div className='flex justify-center'>
-                                        <Chip
-                                            variant="ghost"
-                                            color="blue"
-                                            size="sm"
-                                            value="En proceso"
-                                            className='w-[117px]'
-                                            icon={
-                                            <span className="mx-auto mt-1 block h-2 w-2 rounded-full bg-blue-900 content-['']" />
-                                            }
-                                        />
-                                    </div>
-                                </td>
-                                <td className="p-4">
-                                    <div className='flex justify-center'>
-                                        <ComputerDesktopIcon className='w-10 h-10 text-[#263238]' />
-                                    </div>
-                                </td>
-                                <td className="p-4 flex justify-center">
-                                    <Menu>
-                                        <MenuHandler>
-                                            <IconButton variant="text">
-                                                <EllipsisVerticalIcon className='w-8 h-8' />
-                                            </IconButton>
-                                        </MenuHandler>
-                                        <MenuList>
-                                            <Link to='/dashboard/8'>
-                                                <MenuItem>Información</MenuItem>
-                                            </Link>
-                                            <MenuItem>Descargar Informe</MenuItem>
-                                        </MenuList>
-                                    </Menu>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table> */}
-
                     <div className='flex flex-row items-center h-[50px] rounded-t-lg text-black bg-[#ecedf1]'>
                         <div className='w-[50px] flex justify-center'>#</div>
                         <div className='w-[50%] text-left px-5'>Descripcion</div>
-                        <div className='w-[50%] flex flex-row justify-between items-center'>
+                        <div className='w-[calc(50%-50px)] flex flex-row justify-between items-center'>
                             <div className='w-[120px] h-[26px] hidden md:flex justify-center'>Importancia</div>
-                            <div className='w-[120px] h-[24px] hidden xl:flex justify-center'>Estado</div>
+                            <div className='w-[120px] h-[24px] hidden md:flex justify-center'>Estado</div>
                             <div className='w-[78px] hidden 2xl:flex justify-center'>Dispositivo</div>
                             <div className='w-[50px] flex justify-center'>...</div>
                         </div>
@@ -130,10 +50,10 @@ export const MyTicket = () => {
                         <div className='w-[50%] text-left px-5'>
                             <Typography color="blue-gray" variant="h6" >Error en SIDIGE</Typography>
                             <Typography variant="small" color="blue-gray" className="font-normal whitespace-nowrap overflow-hidden text-ellipsis">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aspernatur ea nihil repudiandae aperiam sint vel corrupti officia mollitia molestias minus quae consequatur dicta, quo accusantium laudantium tenetur animi impedit!
                             </Typography>
                         </div>
-                        <div className='w-[50%] flex flex-row justify-between items-center'>
+                        <div className='w-[calc(50%-50px)] flex flex-row justify-between items-center'>
                             <div className='w-[120px] h-[26px] hidden md:flex justify-center'>
                                 <Chip
                                     variant="outlined"
@@ -143,7 +63,7 @@ export const MyTicket = () => {
                                     className="w-[100px] text-center"
                                 />
                             </div>
-                            <div className='w-[120px] h-[24px] hidden xl:flex justify-center'>
+                            <div className='w-[120px] h-[24px] hidden md:flex justify-center'>
                                 <Chip
                                     variant="ghost"
                                     color="blue"

@@ -1,8 +1,8 @@
 // TERCEROS
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, List, ListItem, ListItemPrefix, Typography } from '@material-tailwind/react'
-import { PowerIcon } from '@heroicons/react/24/solid'
+import { Card, List, ListItem, ListItemPrefix, Typography, button } from '@material-tailwind/react'
+import { PowerIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
 // FUNCIONES DEL PROYECTO
 import { useLoginContext } from '../../context/LoginContext'
@@ -23,10 +23,19 @@ export const Navegation = () => {
     // CERRAR SESION
     const { logout } = useLoginContext()
 
+    // ABRIR Y CERRAR LA NAVEGACION
+    const [leftNav, setLeftNav] = useState(false)
+    const viewNav = () => {
+        leftNav ? setLeftNav(false) : setLeftNav(true)
+    }
+
     return (
         <>
-            <Card className='h-[calc(100vh-50px)] w-[250px] p-7 my-6 ml-6 bg-[#212121] text-white fixed z-10 left-[-274px] xl:left-0 justify-between items-center flex-col'>
-                <div>Aqui ira un logo :3</div>
+            <div className={`${leftNav ? "absolute" : "hidden" } w-full h-screen z-[995] bg-black bg-opacity-60 backdrop-blur-sm`} onClick={viewNav}></div>
+            <Card className={`h-[calc(100vh-50px)] w-[250px] p-7 my-6 ml-6 bg-[#212121] text-white fixed z-[999] left-[${leftNav ? "0" : "-274px"}] xl:left-0 justify-between items-center flex-col`}>
+                <div>
+                    Aqui ira un logo :3
+                </div>
 
                 <List className='text-white'>
                     { 
@@ -53,6 +62,12 @@ export const Navegation = () => {
                         Log out
                     </ListItem>
                 </List>
+                <button 
+                    className='absolute xl:hidden right-[-42px] rounded-r p-3 bg-[#212121]' 
+                    onClick={viewNav}
+                    >
+                        {leftNav ? <ArrowSmallLeftIcon className='w-5' /> : <ArrowSmallRightIcon className='w-5' /> }
+                </button>
             </Card>
         </>
     )
