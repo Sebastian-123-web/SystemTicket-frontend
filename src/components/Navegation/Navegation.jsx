@@ -32,7 +32,9 @@ export const Navegation = () => {
     return (
         <>
             <div className={`${leftNav ? "absolute" : "hidden" } w-full h-screen z-[995] bg-black bg-opacity-60 backdrop-blur-sm`} onClick={viewNav}></div>
-            <Card className={`h-[calc(100vh-50px)] w-[250px] p-7 my-6 ml-6 bg-[#212121] text-white fixed z-[999] left-[${leftNav ? "0" : "-274px"}] xl:left-0 justify-between items-center flex-col`}>
+            <Card 
+                className={`h-[calc(100vh-50px)] w-[250px] p-7 my-6 ml-6 bg-[#212121] text-white fixed z-[999] ${leftNav ? "left-[0]" : "left-[-274px]"} duration-500 xl:left-0 justify-between items-center flex-col`}
+            >
                 <div>
                     Aqui ira un logo :3
                 </div>
@@ -40,7 +42,7 @@ export const Navegation = () => {
                 <List className='text-white'>
                     { 
                         dataSection.map((sect, i) => (
-                            <Link key={i} to={sect.url} onClick={() => setActiveMenu(sect.url)} className={`${activeMenu==sect.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
+                            <Link key={i} to={sect.url} onClick={() => {setActiveMenu(sect.url)}} className={`${activeMenu==sect.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
                                 <ListItem>
                                     <ListItemPrefix>
                                         <Typography className='w-5'>
