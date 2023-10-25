@@ -33,7 +33,7 @@ export const Navegation = () => {
         <>
             <div className={`${leftNav ? "absolute" : "hidden" } w-full h-screen z-[995] bg-black bg-opacity-60 backdrop-blur-sm`} onClick={viewNav}></div>
             <Card 
-                className={`h-screen md:h-[calc(100vh-50px)] w-[250px] rounded-l-none p-7 xl:my-6 xl:ml-6 bg-[#212121] text-white fixed z-[999] ${leftNav ? "left-[0]" : "left-[-250px]"} duration-500 xl:left-0 justify-between items-center flex-col`}
+                className={`h-screen xl:h-[calc(100vh-50px)] w-[250px] rounded-l-none xl:rounded-lg p-7 xl:my-6 xl:ml-6 bg-[#212121] text-white fixed z-[999] ${leftNav ? "left-[0]" : "left-[-250px]"} duration-500 xl:left-0 justify-between items-center flex-col`}
             >
                 <div>
                     Aqui ira un logo :3
@@ -65,10 +65,10 @@ export const Navegation = () => {
                     </ListItem>
                 </List>
                 <button 
-                    className='absolute xl:hidden right-[-42px] rounded-r p-3 bg-[#212121]' 
+                    className='absolute xl:hidden top-3 right-[-31px] rounded-r-full p-2 bg-[#212121]' 
                     onClick={viewNav}
                     >
-                        {leftNav ? <ArrowSmallLeftIcon className='w-5' /> : <ArrowSmallRightIcon className='w-5' /> }
+                        {leftNav ? <ArrowSmallLeftIcon className='w-4' /> : <ArrowSmallRightIcon className='w-4' /> }
                 </button>
             </Card>
         </>
