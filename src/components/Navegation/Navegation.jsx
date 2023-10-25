@@ -1,8 +1,8 @@
 // TERCEROS
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, List, ListItem, ListItemPrefix, Typography } from '@material-tailwind/react'
-import { PowerIcon } from '@heroicons/react/24/solid'
+import { Card, List, ListItem, ListItemPrefix, Typography, button } from '@material-tailwind/react'
+import { PowerIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
 // FUNCIONES DEL PROYECTO
 import { useLoginContext } from '../../context/LoginContext'
@@ -13,21 +13,36 @@ import { dataSection } from '../../data/dataSection'
 
 export const Navegation = () => {
 
-    // ACTIVAR LA OPCION DE MENU SELECCIONADA
-    const [activeMenu, setActiveMenu] = useState("/dashboard")
+    // OBTENGO EL URL ACTUAL DE LA APP
+    var URLactual = window.location 
+
+    // ACTIVAR LA OPCION DE MENU SELECCIONADA 
+    // COLOCO POR DEFECTO LA URL ACTUAL DE LA APP PARA QUE AL REFRESCAR MARQUE EN LA NAVEGACION EL CORRECTO
+    const [activeMenu, setActiveMenu] = useState(URLactual.hash.replace('#',''))
 
     // CERRAR SESION
     const { logout } = useLoginContext()
 
+    // ABRIR Y CERRAR LA NAVEGACION
+    const [leftNav, setLeftNav] = useState(false)
+    const viewNav = () => {
+        leftNav ? setLeftNav(false) : setLeftNav(true)
+    }
+
     return (
         <>
-            <Card className='h-[calc(100vh-50px)] w-[250px] p-7 m-6 bg-[#212121] text-white flex justify-between items-center flex-col'>
-                <div>Aqui ira un logo :3</div>
+            <div className={`${leftNav ? "absolute" : "hidden" } w-full h-screen z-[995] bg-black bg-opacity-60 backdrop-blur-sm`} onClick={viewNav}></div>
+            <Card 
+                className={`h-screen xl:h-[calc(100vh-50px)] w-[250px] rounded-l-none xl:rounded-lg p-7 xl:my-6 xl:ml-6 bg-[#212121] text-white fixed z-[999] ${leftNav ? "left-[0]" : "left-[-250px]"} duration-500 xl:left-0 justify-between items-center flex-col`}
+            >
+                <div>
+                    Aqui ira un logo :3
+                </div>
 
                 <List className='text-white'>
                     { 
                         dataSection.map((sect, i) => (
-                            <Link key={i} to={sect.url} onClick={() => setActiveMenu(sect.url)} className={`${activeMenu==sect.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
+                            <Link key={i} to={sect.url} onClick={() => {setActiveMenu(sect.url)}} className={`${activeMenu==sect.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
                                 <ListItem>
                                     <ListItemPrefix>
                                         <Typography className='w-5'>
@@ -49,6 +64,12 @@ export const Navegation = () => {
                         Log out
                     </ListItem>
                 </List>
+                <button 
+                    className='absolute xl:hidden top-3 right-[-31px] rounded-r-full p-2 bg-[#212121]' 
+                    onClick={viewNav}
+                    >
+                        {leftNav ? <ArrowSmallLeftIcon className='w-4' /> : <ArrowSmallRightIcon className='w-4' /> }
+                </button>
             </Card>
         </>
     )

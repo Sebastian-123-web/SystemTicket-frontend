@@ -6,7 +6,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/solid'
 export const TitleBard = () => {
   return (
     <>
-        <Card className='col-span-9 row-span-1 p-5'>
+        <Card className='col-span-12 md:col-span-9 row-span-1 p-5'>
             <div className='flex justify-between items-center h-full' >
                 <Typography variant='h5'>Ticket Generados</Typography>
                 <div className='relative'>

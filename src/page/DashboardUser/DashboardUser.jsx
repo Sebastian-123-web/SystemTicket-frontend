@@ -21,7 +21,7 @@ export const DashboardUser = () => {
                 ) : (
                     <div className='w-full h-full flex'>
                         <Navegation />
-                        <div className='w-full py-6 pr-6'>
+                        <div className='w-full p-6 xl:ml-[274px]'>
                             <Outlet />
                         </div>
                     </div>
