@@ -29,14 +29,14 @@ export const TopBar = ({TitleSection}) => {
                 </div>
                 <Menu>
                     <MenuHandler>
-                        <div className='flex flex-row items-center cursor-pointer py-3 px-6 rounded-lg text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20'>
+                        <div className='flex flex-row justify-center items-center cursor-pointer py-1 px-1 md:py-3 md:px-6 rounded-full md:rounded-lg text-gray-900 hover:bg-gray-900/10 active:bg-gray-900/20'>
                             <Avatar 
                                 src='https://avatars.githubusercontent.com/u/69646937?v=4' 
                                 alt="avatar"
                                 size='sm'
-                                className='mr-2'
+                                className='md:mr-3'
                             />
-                            <Typography>Rodrigo Bañagasta F.</Typography>
+                            <Typography className='hidden md:flex'>Rodrigo Bañagasta F.</Typography>
                         </div>
                     </MenuHandler>
                     <MenuList>

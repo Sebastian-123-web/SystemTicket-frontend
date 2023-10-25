@@ -34,7 +34,7 @@ export const MyTicket = () => {
 
                 <New col='col-span-3' row='row-span-6' />
 
-                <Card className="col-span-9 row-span-5 p-5">
+                <Card className="col-span-12 md:col-span-9 row-span-5 p-5">
                     <div className='flex flex-row items-center h-[50px] rounded-t-lg text-black bg-[#ecedf1]'>
                         <div className='w-[50px] flex justify-center'>#</div>
                         <div className='w-[50%] text-left px-5'>Descripcion</div>
