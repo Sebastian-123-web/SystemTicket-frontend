@@ -65,7 +65,7 @@ export const Navegation = () => {
                     </ListItem>
                 </List>
                 <button 
-                    className='absolute xl:hidden top-3 right-[-31px] rounded-r-full p-2 bg-[#212121]' 
+                    className='absolute xl:hidden bottom-16 right-[-31px] rounded-r-full p-2 bg-[#212121]' 
                     onClick={viewNav}
                     >
                         {leftNav ? <ArrowSmallLeftIcon className='w-4' /> : <ArrowSmallRightIcon className='w-4' /> }
