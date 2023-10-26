@@ -39,7 +39,7 @@ export const CreateTicket = () => {
         <>
             <TopBar TitleSection={"Crear Ticket"} />
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
-                <Card className='md:p-5 col-span-12 md:col-span-9 row-span-6 flex items-center'>
+                <Card className='xl:p-5 col-span-12 xl:col-span-9 row-span-6 flex items-center'>
                     <div className="w-full md:w-[70%] py-4 px-8 flex justify-between flex-col">
                         <Stepper
                             activeStep={activeStep}

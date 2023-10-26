@@ -13,7 +13,7 @@ export const StatusProgressBar = () => {
   const handlePrev = () => !isFirstStep && setActiveStep((cur) => cur - 1);
 
   return (
-    <Card className="h-[calc(100%-46px)] py-5 px-8">
+    <Card className="h-[calc(100%-46px)] pt-5 pb-11 xl:py-5 px-4 xl:px-8">
       <Stepper
         activeStep={activeStep}
         isLastStep={(value) => setIsLastStep(value)}
@@ -22,7 +22,7 @@ export const StatusProgressBar = () => {
         <Step onClick={() => setActiveStep(0)}>
           <div className="absolute bottom-[-30px] w-max text-center">
             <Typography
-              variant="h6"
+              variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
             >
               Nuevo
@@ -32,7 +32,7 @@ export const StatusProgressBar = () => {
         <Step onClick={() => setActiveStep(1)}>
           <div className="absolute bottom-[-30px] w-max text-center">
             <Typography
-              variant="h6"
+              variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
             >
               Abierto
@@ -42,7 +42,7 @@ export const StatusProgressBar = () => {
         <Step onClick={() => setActiveStep(2)}>
           <div className="absolute bottom-[-30px] w-max text-center">
             <Typography
-              variant="h6"
+              variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
             >
               Pendiente
@@ -52,7 +52,7 @@ export const StatusProgressBar = () => {
         <Step onClick={() => setActiveStep(3)}>
           <div className="absolute bottom-[-30px] w-max text-center">
             <Typography
-              variant="h6"
+              variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
             >
               En proceso
@@ -62,7 +62,7 @@ export const StatusProgressBar = () => {
         <Step onClick={() => setActiveStep(4)}>
           <div className="absolute bottom-[-30px] w-max text-center">
             <Typography
-              variant="h6"
+              variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
             >
               Resuelto

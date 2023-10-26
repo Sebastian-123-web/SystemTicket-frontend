@@ -12,6 +12,8 @@ import { StatusProgressBar } from './StatusProgressBar/StatusProgressBar'
 import { ViewImage } from './ViewImage/ViewImage'
 import { Back } from '../../../components/Back/Back'
 
+import '../../../index.css'
+
 const imagenes = [
     {
         imge : "https://cdn.businessinsider.es/sites/navi.axelspringer.es/public/media/image/2021/01/pantallazo-azul-2204185.jpg?tf=3840x"
@@ -31,8 +33,8 @@ export const Ticket = () => {
             {/* BARRA SUPERIOR DE TITULO Y USUARIO */}
             <TopBar TitleSection={"Mis Tickets"} />
 
-            <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
-                <div className='col-span-9 row-span-2 '>
+            <div className='h-[calc(100%-124px)] overflow-y-scroll chat-container xl:bg-[#f3f5f9] mt-6 grid grid-cols-12 xl:grid-rows-6 gap-6'>
+                <div className='col-span-12 xl:col-span-9 row-span-2 '>
                     <div className='flex items-center justify-between mb-2'>
                         <Back />
                         <div className=''>
@@ -51,7 +53,7 @@ export const Ticket = () => {
                 {/* COMPONENTE DE NOTICIAS  */}
                 <New col='col-span-3' row='row-span-2' />
 
-                <Card className='col-span-5 row-span-2 p-5 flex flex-row justify-between'>
+                <Card className='col-span-12 xl:col-span-5 row-span-2 p-5 flex flex-row justify-between'>
                     <div className='flex flex-col justify-between'>
                         <Typography variant='h5'>Ticket #12</Typography>
                         <Typography variant='small'>No puedo Ingresar a SIDIGE</Typography>
@@ -74,14 +76,14 @@ export const Ticket = () => {
                     </div>
                 </Card>
 
-                <Card className='col-span-4 row-span-5 p-5'>
+                <Card className='col-span-12 xl:col-span-4 row-span-5 p-5'>
                     <Typography variant='h5' className='mb-2'>Descripcion</Typography>
                     <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aut minima, saepe quia optio perferendis excepturi nesciunt, dolorum accusantium ipsam pariatur. Soluta illum placeat ex architecto exercitationem in, nihil molestiae.</Typography>
                 </Card>
 
 
                 {/* AQUI ESTA EL CHAT */}
-                <Card className='col-span-3 row-span-5 relative p-5 flex justify-between'>
+                <Card className='col-span-12 xl:col-span-3 row-span-5 relative p-5 flex justify-between'>
                     <div className='flex items-center mb-3'>
                         <span className='w-3 h-3 mr-2 bg-green-800 rounded-full'></span>
                         <Typography variant='h5'>Chat</Typography>

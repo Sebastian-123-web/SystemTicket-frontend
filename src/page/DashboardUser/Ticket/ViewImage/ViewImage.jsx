@@ -20,7 +20,7 @@ export const ViewImage = ({imagenes}) => {
   };
 
   return (
-    <Card className="col-span-5 row-span-3 p-5">
+    <Card className="col-span-12 xl:col-span-5 row-span-3 p-5">
       <div className="flex items-center justify-around w-full h-full">
         {imagenes.map((image, i) => (
           <div key={i} className="h-20 w-20">
