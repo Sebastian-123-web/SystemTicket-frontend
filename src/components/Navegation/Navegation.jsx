@@ -35,7 +35,7 @@ export const Navegation = () => {
             <Card 
                 className={`h-screen xl:h-[calc(100vh-50px)] w-[250px] rounded-l-none xl:rounded-lg p-7 xl:my-6 xl:ml-6 bg-[#212121] text-white fixed z-[999] ${leftNav ? "left-[0]" : "left-[-250px]"} duration-500 xl:left-0 justify-between items-center flex-col`}
             >
-                <div>
+                <div className='mt-10'>
                     Aqui ira un logo :3
                 </div>
 
@@ -56,7 +56,7 @@ export const Navegation = () => {
                     }
                 </List>
 
-                <List className='text-white'>
+                <List className='text-white mb-16 md:mb-0'>
                     <ListItem onClick={logout}>
                         <ListItemPrefix>
                             <PowerIcon className="h-5 w-5" />
