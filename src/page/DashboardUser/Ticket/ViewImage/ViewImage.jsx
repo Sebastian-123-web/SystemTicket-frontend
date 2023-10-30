@@ -1,7 +1,7 @@
 
 // DE TERCEROS
 import { useState } from "react";
-import { Card, Dialog, DialogBody } from "@material-tailwind/react";
+import { Card, Dialog, DialogBody, Typography } from "@material-tailwind/react";
 
 // FUNCIONES DEL PROYECTO
 
@@ -21,6 +21,7 @@ export const ViewImage = ({imagenes}) => {
 
   return (
     <Card className="col-span-12 xl:col-span-5 row-span-3 p-5">
+      <Typography variant="h5" color='black' className="mb-3">Imagenes</Typography>
       <div className="flex items-center justify-around w-full h-full">
         {imagenes.map((image, i) => (
           <div key={i} className="h-20 w-20">

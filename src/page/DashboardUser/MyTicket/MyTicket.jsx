@@ -45,7 +45,7 @@ export const MyTicket = () => {
                             <div className='w-[50px] flex justify-center'>...</div>
                         </div>
                     </div>
-                    <div className=' overflow-y-scroll'>
+                    <div className=' overflow-y-scroll chat-container'>
                         <div className='flex flex-row items-center border-t py-3'>
                             <div className='w-[50px] flex justify-center'>1</div>
                             <div className='w-[50%] text-left sm:px-5'>

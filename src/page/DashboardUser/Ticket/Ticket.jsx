@@ -34,8 +34,8 @@ export const Ticket = () => {
             {/* BARRA SUPERIOR DE TITULO Y USUARIO */}
             <TopBar TitleSection={"Mis Tickets"} />
 
-            <div className='h-[calc(100%-124px)] overflow-y-scroll chat-container xl:bg-[#f3f5f9] mt-6 grid grid-cols-12 xl:grid-rows-6 gap-6'>
-                <div className='col-span-12 xl:col-span-9 row-span-2 '>
+            <div className='h-[calc(100%-124px)] overflow-y-scroll chat-container xl:bg-[#f3f5f9] mt-6 grid grid-cols-12 xl:grid-rows-6 gap-6 pb-2 xl:pb-0'>
+                <div className='col-span-12 xl:col-span-9 row-span-2'>
                     <div className='flex items-center justify-between mb-2'>
                         <Back />
                         <div className=''>
@@ -56,7 +56,7 @@ export const Ticket = () => {
 
                 <Card className='col-span-12 xl:col-span-5 row-span-2 p-5 flex flex-row justify-between'>
                     <div className='flex flex-col justify-between'>
-                        <Typography variant='h5'>Ticket #12</Typography>
+                        <Typography variant='h5' color='black'>Ticket #12</Typography>
                         <Typography variant='small'>No puedo Ingresar a SIDIGE</Typography>
                         <div className='flex items-center'>
                             <Typography variant='small' className='mr-1'>Anydesk:</Typography>
@@ -78,7 +78,7 @@ export const Ticket = () => {
                 </Card>
 
                 <Card className='col-span-12 xl:col-span-4 row-span-5 p-5'>
-                    <Typography variant='h5' className='mb-2'>Descripcion</Typography>
+                    <Typography variant='h5' color='black' className='mb-2'>Descripcion</Typography>
                     <Typography>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem aut minima, saepe quia optio perferendis excepturi nesciunt, dolorum accusantium ipsam pariatur. Soluta illum placeat ex architecto exercitationem in, nihil molestiae.</Typography>
                 </Card>
 
