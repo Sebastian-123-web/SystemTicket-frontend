@@ -1,7 +1,7 @@
 // TERCEROS
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, List, ListItem, ListItemPrefix, Typography, button } from '@material-tailwind/react'
+import { Card, List, ListItem, ListItemPrefix, Typography } from '@material-tailwind/react'
 import { PowerIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/react/24/solid'
 
 // FUNCIONES DEL PROYECTO
