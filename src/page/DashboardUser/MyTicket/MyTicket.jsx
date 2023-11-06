@@ -37,7 +37,7 @@ export const MyTicket = () => {
                 <Card className="col-span-12 xl:col-span-9 row-span-5 p-5">
                     <div className='flex flex-row items-center h-[50px] rounded-t-lg text-black bg-[#ecedf1]'>
                         <div className='w-[50px] flex justify-center'>#</div>
-                        <div className='w-[50%] text-left md:px-5'>Descripcion</div>
+                        <div className='w-[48%] text-left md:px-5'>Descripcion</div>
                         <div className='w-[calc(50%-50px)] flex flex-row justify-between items-center'>
                             <div className='w-[120px] h-[26px] hidden sm:flex md:flex justify-center'>Importancia</div>
                             <div className='w-[120px] h-[24px] hidden md:flex justify-center'>Estado</div>
@@ -48,7 +48,7 @@ export const MyTicket = () => {
                     <div className=' overflow-y-scroll chat-container'>
                         <div className='flex flex-row items-center border-t py-3'>
                             <div className='w-[50px] flex justify-center'>1</div>
-                            <div className='w-[50%] text-left sm:px-5'>
+                            <div className='w-[48%] text-left sm:px-5'>
                                 <Typography color="blue-gray" variant="h6" className='whitespace-nowrap overflow-hidden text-ellipsis'>Error en SIDIGE</Typography>
                                 <Typography variant="small" color="blue-gray" className="font-normal whitespace-nowrap overflow-hidden text-ellipsis">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aspernatur ea nihil repudiandae aperiam sint vel corrupti officia mollitia molestias minus quae consequatur dicta, quo accusantium laudantium tenetur animi impedit!

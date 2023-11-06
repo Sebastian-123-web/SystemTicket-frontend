@@ -13,14 +13,14 @@ export const Chat = () => {
 
   return (
     <>
-        <buttom 
+        <button 
             className='fixed xl:hidden bottom-[10px] right-[10px] z-[100] rigth-10 flex justify-center items-center w-16 h-16 bg-[#282828] text-gray-300 rounded-full '
             onClick={viewChat}
         >
             <ChatBubbleOvalLeftIcon className='w-10' />
-        </buttom>
+        </button>
         {/* <div className={`${msmChat ? "absolute" : "hidden" } w-full h-screen z-[995] bg-black bg-opacity-60 backdrop-blur-sm`} onClick={viewChat}></div> */}
-        <Card className={`${msmChat ? "fixed z-[995] bottom-[85px] right-[10px] w-[80%] sm:w-[420px] h-[400px]" : "hidden"} col-span-12 xl:col-span-3 row-span-5 p-5 xl:flex justify-between bg-[#282828] xl:bg-white text-white xl:text-black `}>
+        <Card className={`${msmChat ? "fixed z-[99] bottom-[85px] right-[10px] w-[80%] sm:w-[420px] h-[400px]" : "hidden"} col-span-12 xl:col-span-3 row-span-5 p-5 xl:flex justify-between bg-[#282828] xl:bg-white text-white xl:text-black `}>
             <div className='flex items-center mb-3'>
                 <span className='w-3 h-3 mr-2 bg-green-800 rounded-full'></span>
                 <Typography variant='h5'>Chat</Typography>
@@ -47,7 +47,7 @@ export const Chat = () => {
             <div className="relative">
                 <Input
                     placeholder='Enviar un mensaje'
-                    className="w-full pr-8 !border !border-gray-700 bg-black text-white shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-300 focus:!border-t-gray-300 focus:ring-gray-900/10"
+                    className="w-full pr-8 !border !border-gray-700 bg-black text-white xl:text-black shadow-lg shadow-gray-900/5 ring-4 ring-transparent placeholder:text-gray-500 focus:!border-gray-300 focus:!border-t-gray-300 focus:ring-gray-900/10"
                     labelProps={{
                         className: "hidden",
                     }}

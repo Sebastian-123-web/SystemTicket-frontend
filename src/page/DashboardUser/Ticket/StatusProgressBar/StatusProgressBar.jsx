@@ -20,7 +20,7 @@ export const StatusProgressBar = () => {
         isFirstStep={(value) => setIsFirstStep(value)}
       >
         <Step onClick={() => setActiveStep(0)}>
-          <div className="absolute bottom-[-30px] w-max text-center">
+          <div className="absolute bottom-[-20px] w-max text-center">
             <Typography
               variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
@@ -30,7 +30,7 @@ export const StatusProgressBar = () => {
           </div>
         </Step>
         <Step onClick={() => setActiveStep(1)}>
-          <div className="absolute bottom-[-30px] w-max text-center">
+          <div className="absolute bottom-[-20px] w-max text-center">
             <Typography
               variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
@@ -40,7 +40,7 @@ export const StatusProgressBar = () => {
           </div>
         </Step>
         <Step onClick={() => setActiveStep(2)}>
-          <div className="absolute bottom-[-30px] w-max text-center">
+          <div className="absolute bottom-[-20px] w-max text-center">
             <Typography
               variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
@@ -50,7 +50,7 @@ export const StatusProgressBar = () => {
           </div>
         </Step>
         <Step onClick={() => setActiveStep(3)}>
-          <div className="absolute bottom-[-30px] w-max text-center">
+          <div className="absolute bottom-[-20px] w-max text-center">
             <Typography
               variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
@@ -60,7 +60,7 @@ export const StatusProgressBar = () => {
           </div>
         </Step>
         <Step onClick={() => setActiveStep(4)}>
-          <div className="absolute bottom-[-30px] w-max text-center">
+          <div className="absolute bottom-[-20px] w-max text-center">
             <Typography
               variant="small"
               color={activeStep === 0 ? "blue-gray" : "gray"}
