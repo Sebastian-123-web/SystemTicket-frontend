@@ -15,13 +15,13 @@ export default function App() {
     <LoginContextProvider>
       <HashRouter>
           <Routes>
-            <Route index element={ <RouterLogin url="/dashboard" > <Login /> </RouterLogin > } />
-            <Route path='/dashboard' element={ <RouterDashboard url="/" > <DashboardUser /> </RouterDashboard > } >
+            <Route index element={ <RouterLogin url="/dashboardUser" > <Login /> </RouterLogin > } />
+            <Route path='/dashboardUser' element={ <RouterDashboard url="/" > <DashboardUser /> </RouterDashboard > } >
               <Route index element={ <MyTicket /> } />
-              <Route path='/dashboard/createticket' element={ <CreateTicket /> } />
-              <Route path='/dashboard/:id' element={ <Ticket /> } />
-              <Route path='/dashboard/about' element={ <About /> } />
-              <Route path='/dashboard/valoracion' element={ <Appreciation /> } />
+              <Route path='/dashboardUser/createticket' element={ <CreateTicket /> } />
+              <Route path='/dashboardUser/:id' element={ <Ticket /> } />
+              <Route path='/dashboardUser/about' element={ <About /> } />
+              <Route path='/dashboardUser/valoracion' element={ <Appreciation /> } />
             </Route>
             <Route path='*' element={ <h1>Pagina no encontrada TwT</h1> } />
           </Routes>

@@ -87,7 +87,7 @@ export const MyTicket = () => {
                                             </IconButton>
                                         </MenuHandler>
                                         <MenuList>
-                                            <Link to='/dashboard/8'>
+                                            <Link to='/dashboardUser/8'>
                                                 <MenuItem>Información</MenuItem>
                                             </Link>
                                             <MenuItem>Descargar Informe</MenuItem>

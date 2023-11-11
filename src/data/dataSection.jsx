@@ -2,17 +2,17 @@ import { TicketIcon, PlusCircleIcon, InformationCircleIcon, StarIcon} from '@her
 
 export const dataSection = [
     {
-        url : "/dashboard",
+        url : "/dashboardUser",
         name : "Mis Tickets",
         icon : <TicketIcon />
     },
     {
-        url : "/dashboard/createticket",
+        url : "/dashboardUser/createticket",
         name : "Crear Ticket",
         icon : <PlusCircleIcon />
     },
     {
-        url : "/dashboard/valoracion",
+        url : "/dashboardUser/valoracion",
         name : "Valoracion",
         icon : <StarIcon />
     }
