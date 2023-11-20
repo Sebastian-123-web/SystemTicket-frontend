@@ -8,6 +8,7 @@ import { Login } from './page/Login/Login';
 import { About } from './page/DashboardUser/About/About';
 import { Ticket } from './page/DashboardUser/Ticket/Ticket';
 import { Appreciation } from './page/DashboardUser/Appreciation/Appreciation'
+import Home from './page/Home/Home';
 
 export default function App() {
 
@@ -15,7 +16,8 @@ export default function App() {
     <LoginContextProvider>
       <HashRouter>
           <Routes>
-            <Route index element={ <RouterLogin url="/dashboardUser" > <Login /> </RouterLogin > } />
+            <Route index element={ <Home /> } />
+            <Route path='/login' element={ <RouterLogin url="/dashboardUser" > <Login /> </RouterLogin > } />
             <Route path='/dashboardUser' element={ <RouterDashboard url="/" > <DashboardUser /> </RouterDashboard > } >
               <Route index element={ <MyTicket /> } />
               <Route path='/dashboardUser/createticket' element={ <CreateTicket /> } />
@@ -39,7 +41,7 @@ function RouterLogin({children, url}) {
   }
 }
 
-function RouterDashboard({children, url}) {
+function RouterDashboard({isAdmin, children, url}) {
   const { user } = useLoginContext();
   if(user){
     return children
