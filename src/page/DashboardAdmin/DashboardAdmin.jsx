@@ -1,7 +1,15 @@
 import React from 'react'
 
+import { useLoginContext } from '../../context/LoginContext'
+
 export const DashboardAdmin = () => {
+
+  const { logout } = useLoginContext()
+
   return (
-    <div>DashboardAdmin</div>
+    <div>
+      <h1>DashboardAdmin</h1>
+      <button onClick={logout}>Log out</button>
+    </div>
   )
 }
