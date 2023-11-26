@@ -10,7 +10,7 @@ export const LoginContextProvider = ({children}) => {
     
     const [user, setUser] = useState(()=>{
         if(localStorage.getItem('user')){
-            return localStorage.getItem('user')
+            return JSON.parse(localStorage.getItem('user'))
         }
         return null
     })

@@ -16,75 +16,75 @@ import { DashboardAdmin } from './page/DashboardAdmin/DashboardAdmin'
 
 export default function App() {
 
-  return (
-    <LoginContextProvider>
-      <HashRouter>
-          <Routes>
-            <Route index element={ <Home /> } />
+    return (
+        <LoginContextProvider>
+            <HashRouter>
+                <Routes>
+                    <Route index element={<Home />} />
 
-            <Route path='/login' element={ <RouterLogin> <Login /> </RouterLogin > } />
+                    <Route path='/login' element={<RouterLogin> <Login /> </RouterLogin >} />
 
-            <Route path='/dashboardUser' element={ <RouterDashboardUser url="/" > <DashboardUser /> </RouterDashboardUser > } >
-              <Route index element={ <MyTicket /> } />
-              <Route path='/dashboardUser/createticket' element={ <CreateTicket /> } />
-              <Route path='/dashboardUser/:id' element={ <Ticket /> } />
-              <Route path='/dashboardUser/about' element={ <About /> } />
-              <Route path='/dashboardUser/valoracion' element={ <Appreciation /> } />
-            </Route>
+                    <Route path='/dashboardUser' element={<RouterDashboardUser url="/" > <DashboardUser /> </RouterDashboardUser>} >
+                        <Route index element={<MyTicket />} />
+                        <Route path='/dashboardUser/createticket' element={<CreateTicket />} />
+                        <Route path='/dashboardUser/:id' element={<Ticket />} />
+                        <Route path='/dashboardUser/about' element={<About />} />
+                        <Route path='/dashboardUser/valoracion' element={<Appreciation />} />
+                    </Route>
 
-            <Route path='/dashboardAdmin' element={ <RouterDashboard url="/" > <DashboardAdmin /> </RouterDashboard > } />
+                    <Route path='/dashboardAdmin' element={<RouterDashboard url="/" > <DashboardAdmin /> </RouterDashboard >} />
 
-            <Route path='*' element={ <h1>Pagina no encontrada TwT</h1> } />
-          </Routes>
-      </HashRouter>
-    </LoginContextProvider>
-  )
+                    <Route path='*' element={<h1>Pagina no encontrada TwT</h1>} />
+                </Routes>
+            </HashRouter>
+        </LoginContextProvider>
+    )
 }
 
-function RouterLogin({children}) {
-  const { user } = useLoginContext();
+function RouterLogin({ children }) {
+    const { user } = useLoginContext();
 
-  if (!user) {
-    return children
-  }
+    if (!user) {
+        return children
+    }
 
-  //console.log(user.access.includes('admin'))
+    //console.log(user.access.includes('admin'))
 
-  if (user.access==="admin") {
+    if (user.access === "admin") {
+        return <Navigate to="/dashboardAdmin" />
+    }
+
+    return <Navigate to="/dashboardUser" />
+}
+
+
+
+function RouterDashboard({ children, url }) {
+
+    const { user } = useLoginContext();
+
+    if (!user) {
+        return <Navigate to={url} />
+    }
+
+    if (user.access.includes('admin')) {
+        return children
+    }
+    return <Navigate to="/dashboardUser" />
+}
+
+
+
+function RouterDashboardUser({ children, url }) {
+
+    const { user } = useLoginContext();
+
+    if (!user) {
+        return <Navigate to={url} />
+    }
+
+    if (user.access.includes('user')) {
+        return children
+    }
     return <Navigate to="/dashboardAdmin" />
-  }
-
-  return <Navigate to="/dashboardUser" />
-}
-
-
-
-function RouterDashboard({children, url}) {
-
-  const { user } = useLoginContext();
-
-  if(!user) {
-    return <Navigate to={url} />
-  }
-
-  if(user.access.includes('admin')){
-    return children
-  }
-  return <Navigate to="/dashboardUser" />
-}
-
-
-
-function RouterDashboardUser({children, url}) {
-
-  const { user } = useLoginContext();
-
-  if(!user) {
-    return <Navigate to={url} />
-  }
-
-  if(user.access.includes('user')){
-    return children
-  }
-  return <Navigate to="/dashboardAdmin" />
 }
