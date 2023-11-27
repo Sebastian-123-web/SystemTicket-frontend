@@ -1,15 +1,34 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 
-import { useLoginContext } from '../../context/LoginContext'
+// COMPONENTES DE MATERIAL TAILWIND
+import { Spinner } from '@material-tailwind/react'
+import { Navegation } from '../../components/Navegation/Navegation'
+import { Outlet } from 'react-router-dom'
+
+import { dataSectionAdmin } from "../../data/dataSectionAdmin"
 
 export const DashboardAdmin = () => {
 
-  const { logout } = useLoginContext()
+  // SPINNER DE CARGA
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+      setTimeout(() => { setLoading(false) }, 1000)
+  }, [])
 
   return (
-    <div>
-      <h1>DashboardAdmin</h1>
-      <button onClick={logout}>Log out</button>
+    <div className='w-full h-screen bg-[#f3f5f9] flex justify-center items-center'>
+        {
+            loading ? (
+                <Spinner className="w-12 h-12" />
+            ) : (
+                <div className='w-full h-full flex'>
+                    <Navegation dataNavBar={dataSectionAdmin} />
+                    <div className='w-full p-6 xl:ml-[274px]'>
+                        <Outlet />
+                    </div>
+                </div>
+            )
+        }
     </div>
   )
 }

@@ -6,12 +6,11 @@ import { PowerIcon, ArrowSmallRightIcon, ArrowSmallLeftIcon } from '@heroicons/r
 
 // FUNCIONES DEL PROYECTO
 import { useLoginContext } from '../../context/LoginContext'
-import { dataSection } from '../../data/dataSection'
 
 // COMPONENTES DEL PROYECTO
 
 
-export const Navegation = () => {
+export const Navegation = ({dataNavBar}) => {
 
     // OBTENGO EL URL ACTUAL DE LA APP
     var URLactual = window.location 
@@ -41,7 +40,7 @@ export const Navegation = () => {
 
                 <List className='text-white'>
                     { 
-                        dataSection.map((sect, i) => (
+                        dataNavBar.map((sect, i) => (
                             <Link key={i} to={sect.url} onClick={() => {setActiveMenu(sect.url)}} className={`${activeMenu==sect.url ? 'bg-blue-gray-50 text-[#212121] rounded-lg ' : ''}`}>
                                 <ListItem>
                                     <ListItemPrefix>

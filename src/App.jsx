@@ -13,6 +13,9 @@ import { Ticket } from './page/DashboardUser/Ticket/Ticket';
 import { Appreciation } from './page/DashboardUser/Appreciation/Appreciation'
 
 import { DashboardAdmin } from './page/DashboardAdmin/DashboardAdmin'
+import { Tickets } from './page/DashboardAdmin/Tickets/Tickets';
+import { Inventory } from './page/DashboardAdmin/Inventory/Inventory'
+import { Statistics } from './page/DashboardAdmin/Statistics/Statistics'
 
 export default function App() {
 
@@ -32,7 +35,11 @@ export default function App() {
                         <Route path='/dashboardUser/valoracion' element={<Appreciation />} />
                     </Route>
 
-                    <Route path='/dashboardAdmin' element={<RouterDashboard url="/" > <DashboardAdmin /> </RouterDashboard >} />
+                    <Route path='/dashboardAdmin' element={<RouterDashboard url="/" > <DashboardAdmin /> </RouterDashboard >} >
+                        <Route index element={ <Tickets /> } />
+                        <Route path='/dashboardAdmin/inventory' element={ <Inventory /> } />
+                        <Route path='/dashboardAdmin/statistics' element={ <Statistics /> } />
+                    </Route>
 
                     <Route path='*' element={<h1>Pagina no encontrada TwT</h1>} />
                 </Routes>

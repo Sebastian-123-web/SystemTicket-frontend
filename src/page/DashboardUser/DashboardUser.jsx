@@ -5,6 +5,8 @@ import { Spinner } from '@material-tailwind/react'
 import { Navegation } from '../../components/Navegation/Navegation'
 import { Outlet } from 'react-router-dom'
 
+import { dataSectionUser } from "../../data/dataSectionUser"
+
 export const DashboardUser = () => {
 
     // SPINNER DE CARGA
@@ -20,7 +22,7 @@ export const DashboardUser = () => {
                     <Spinner className="w-12 h-12" />
                 ) : (
                     <div className='w-full h-full flex'>
-                        <Navegation />
+                        <Navegation dataNavBar={dataSectionUser} />
                         <div className='w-full p-6 xl:ml-[274px]'>
                             <Outlet />
                         </div>

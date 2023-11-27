@@ -1,6 +1,6 @@
-import { TicketIcon, PlusCircleIcon, InformationCircleIcon, StarIcon} from '@heroicons/react/24/solid'
+import { TicketIcon, PlusCircleIcon, StarIcon} from '@heroicons/react/24/solid'
 
-export const dataSection = [
+export const dataSectionUser = [
     {
         url : "/dashboardUser",
         name : "Mis Tickets",
