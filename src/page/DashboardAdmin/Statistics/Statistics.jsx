@@ -1,7 +1,11 @@
+import { TopBar } from "../../../components/TopBar/TopBar"
 
+import { dataSectionAdmin } from "../../../data/dataSectionAdmin"
 
-export const Statistics = () => {
+export const Graphics = () => {
   return (
-    <div>Estadisticas</div>
+    <div>
+      <TopBar TitleSection={"Graficos"} dataSection={dataSectionAdmin} />
+    </div>
   )
 }

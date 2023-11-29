@@ -11,11 +11,11 @@ import {
 import { MoonIcon, UserIcon, Cog8ToothIcon } from '@heroicons/react/24/solid'
 
 // PARA QUE EL TITULO CAMBIE DE TODA LA SECCION
-import { dataSectionUser } from "../../data/dataSectionUser"
+// import { dataSectionUser } from "../../data/dataSectionUser"
 
-export const TopBar = ({TitleSection}) => {
+export const TopBar = ({TitleSection, dataSection}) => {
 
-    const title = dataSectionUser.find((sect) => sect.name == TitleSection)
+    const title = dataSection.find((sect) => sect.name == TitleSection)
 
     return (
         <>

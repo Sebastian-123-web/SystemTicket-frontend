@@ -12,8 +12,8 @@ export const dataSectionAdmin = [
         icon : <ClipboardDocumentListIcon />
     },
     {
-        url : "/dashboardAdmin/statistics",
-        name : "Estadisticas",
+        url : "/dashboardAdmin/graphics",
+        name : "Graficos",
         icon : <ChartBarIcon />
     }
 ]

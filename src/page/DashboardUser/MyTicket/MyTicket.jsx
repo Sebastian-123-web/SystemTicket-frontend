@@ -15,18 +15,12 @@ import { Link } from 'react-router-dom';
 import { TitleBard } from './TitleBar/TitleBard';
 import { New } from '../New/New';
 
-const TABLE_HEAD = ["#", "Descripcion", "Importancia", "Estado", "Dispositivo", " "];
- 
-const TABLE_ROWS = [
-  {
-    nticket : 1
-  }
-];
+import { dataSectionUser } from '../../../data/dataSectionUser';
 
 export const MyTicket = () => {
     return (
         <>
-            <TopBar TitleSection={"Mis Tickets"} />
+            <TopBar TitleSection={"Mis Tickets"} dataSection={dataSectionUser} />
 
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
                 

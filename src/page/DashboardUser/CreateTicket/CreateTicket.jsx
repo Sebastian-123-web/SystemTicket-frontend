@@ -8,6 +8,8 @@ import { TopBar } from '../../../components/TopBar/TopBar'
 import { New } from '../New/New'
 import { UploadImage } from '../../../components/UploadImage/UploadImage'
 
+import { dataSectionUser } from '../../../data/dataSectionUser';
+
 export const CreateTicket = () => {
 
     const [activeStep, setActiveStep] = useState(0);
@@ -19,7 +21,7 @@ export const CreateTicket = () => {
 
     return (
         <>
-            <TopBar TitleSection={"Crear Ticket"} />
+            <TopBar TitleSection={"Crear Ticket"} dataSection={dataSectionUser} />
             <div className='h-[calc(100%-124px)] mt-6 grid grid-cols-12 grid-rows-6 gap-6'>
                 <Card className='xl:p-5 col-span-12 xl:col-span-9 row-span-6 flex items-center'>
                     <div className="w-full md:w-[70%] py-4 px-8 flex justify-between flex-col">
