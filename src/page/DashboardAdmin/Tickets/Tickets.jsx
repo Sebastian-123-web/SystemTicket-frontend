@@ -6,7 +6,7 @@ export const Tickets = () => {
   return (
     <div>
       <TopBar TitleSection={"Tickets"} dataSection={dataSectionAdmin} />
-
+      
     </div>
   )
 }
