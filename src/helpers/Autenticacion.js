@@ -23,6 +23,7 @@ export const Autenticacion = async (loginUser) => {
                 console.error('Error: ',err)
             })
         })
+        return dataUser
     } catch (error) {
         console.error(error)
         throw error
