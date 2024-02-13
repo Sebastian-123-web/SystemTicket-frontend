@@ -12,8 +12,8 @@ export const Login = () => {
 
     // OBTENER DATOS DE LOS INPUTS
     const [ dataLogin, setDataLogin ] = useState({
-        email : '',
-        password : ''
+        user_email : '',
+        passClient : ''
     })
     const handleCollectLoginUser = (e) => {
         const { name, value } = e.target
@@ -47,7 +47,7 @@ export const Login = () => {
                         <Input
                             label="Correo"
                             type="email"
-                            name="email"
+                            name="user_email"
                             onChange={handleCollectLoginUser}
                             error={changeInputError}
                         />
@@ -55,7 +55,7 @@ export const Login = () => {
                             <Input
                                 label="Contraseña"
                                 type={ !showPassword ? '' : 'password' }
-                                name="password"
+                                name="passClient"
                                 onChange={handleCollectLoginUser}
                                 error={changeInputError}
                             />
