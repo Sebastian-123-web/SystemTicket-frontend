@@ -7,28 +7,23 @@ const access = [
 ]
 
 export const Autenticacion = async (loginUser) => {
-    try {
-        const dataUser = new Promise((resolve,reject)=>{
-            axios.post('http://localhost:3030/api/authuser', loginUser, {
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-            })
-            .then(response =>{
-                console.log(response.data)
-                if(!response.data){return null}
-                resolve(response.data)
-            })
-            .catch(err => {
-                console.error('Error: ',err)
-            })
+    const dataUser = new Promise((resolve,reject)=>{
+        axios.post('http://localhost:3030/api/authuser', loginUser, {
+            headers: {
+                'Content-Type': 'application/json',
+            },
         })
-        return dataUser
-    } catch (error) {
-        console.error(error)
-        throw error
-    }
-
+        .then(response =>{
+            //console.log(response.data)
+            if(!response.data){return null}
+            resolve(response.data)
+        })
+        .catch(err => {
+            return null
+            //console.error('Error: ',err)
+        })
+    })
+    return dataUser
 
     /*const dataUser = dataUsers.find(u => u.email == loginUser.email && u.password == loginUser.password)
     if(!dataUser){return null}
