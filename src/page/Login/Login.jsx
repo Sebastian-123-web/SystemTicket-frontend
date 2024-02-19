@@ -38,37 +38,40 @@ export const Login = () => {
 
     return (
         <div className="w-full h-screen flex justify-center items-center">
-            {
-                loading ? (
-                    <Spinner className="w-12 h-12" />
-                ) : (
-                    <div className="w-[400px] bg-white p-5 grid gap-5">
-                        <Typography variant="h5" color="blue-gray">Sign Up</Typography>
-                        <Input
-                            label="Correo"
-                            type="email"
-                            name="user_email"
-                            onChange={handleCollectLoginUser}
-                            error={changeInputError}
-                        />
-                        <div className="relative">
+            <div className="w-3/6 h-screen bg-deep-orange-600 flex justify-center items-center">
+                {
+                    loading ? (
+                        <Spinner className="w-12 h-12" />
+                    ) : (
+                        <div className="w-[400px] bg-white p-5 grid gap-5">
+                            <Typography variant="h5" color="blue-gray">Sign Up</Typography>
                             <Input
-                                label="Contraseña"
-                                type={ !showPassword ? '' : 'password' }
-                                name="passClient"
+                                label="Correo"
+                                type="email"
+                                name="user_email"
                                 onChange={handleCollectLoginUser}
                                 error={changeInputError}
                             />
-                            <div className="absolute top-2.5 right-4">
-                                { !showPassword ? <EyeIcon className="w-5 h-5" onClick={()=>setShowPassword(true)} /> : <EyeSlashIcon className="w-5 h-5" onClick={()=>setShowPassword(false)} /> }
+                            <div className="relative">
+                                <Input
+                                    label="Contraseña"
+                                    type={ !showPassword ? '' : 'password' }
+                                    name="passClient"
+                                    onChange={handleCollectLoginUser}
+                                    error={changeInputError}
+                                />
+                                <div className="absolute top-2.5 right-4">
+                                    { !showPassword ? <EyeIcon className="w-5 h-5" onClick={()=>setShowPassword(true)} /> : <EyeSlashIcon className="w-5 h-5" onClick={()=>setShowPassword(false)} /> }
+                                </div>
                             </div>
+                            <Button
+                                onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}} 
+                            >Iniciar Sesion</Button>
                         </div>
-                        <Button
-                            onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}} 
-                        >Iniciar Sesion</Button>
-                    </div>
-                )
-            }
+                    )
+                }
+            </div>
+            <div className="w-3/6 h-screen bg-light-green-800 flex justify-center items-center ">derecha</div>
         </div>
     )
 }
