@@ -121,6 +121,7 @@ export const CreateTicket = () => {
                                     </div>
                                     <div className='relative'>
                                         {/* VISTA PREVIA DE LAS IMAGENES Y PARA SUBIR LAS IMAGENES */}
+                                        <p className='mb-3'>Añadir una imagen: <span className='text-[#9AAFC7]'>(Opcional)</span></p>
                                         <UploadImage />
                                     </div>
                                 </div>

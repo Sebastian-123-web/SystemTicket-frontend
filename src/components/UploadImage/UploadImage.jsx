@@ -32,7 +32,7 @@ export const UploadImage = () => {
 
     return (
         <>
-            <p className='mb-3'>Añadir una imagen: <span className='text-[#9AAFC7]'>(Opcional)</span></p>
+            
             <div className='flex flex-col justify-center'>
                 <div className='w-full inline-flex flex-wrap gap-3 justify-center mb-3'>
                 { loading ? (

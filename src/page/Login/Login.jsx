@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 
-import { Button, Input, Spinner, Typography } from "@material-tailwind/react"
+import { Button, Input, Spinner, Typography, Card, CardBody } from "@material-tailwind/react"
 import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
 
 import { useLoginContext } from '../../context/LoginContext'
+import { UploadImage } from "../../components/UploadImage/UploadImage"
 
 export const Login = () => {
 
@@ -43,7 +44,7 @@ export const Login = () => {
                     loading ? (
                         <Spinner className="w-12 h-12" />
                     ) : (
-                        <div className="w-[400px] bg-white p-5 grid gap-5">
+                        <div className="w-[400px] bg-white p-5 grid gap-5 rounded-lg">
                             <Typography variant="h5" color="blue-gray">Sign Up</Typography>
                             <Input
                                 label="Correo"
@@ -71,7 +72,16 @@ export const Login = () => {
                     )
                 }
             </div>
-            <div className="w-3/6 h-screen bg-light-green-800 flex justify-center items-center ">derecha</div>
+            <div className="w-3/6 h-screen bg-light-green-800 flex justify-center items-center ">
+                <div className="w-[400px] bg-white p-5 grid gap-5 rounded-lg">
+                    <Input label="Nombre" />
+                    <Input label="Apellido" />
+                    <Input label="" />
+                    <Input label="" />
+                    <Input label="" />
+                    <UploadImage />
+                </div>
+            </div>
         </div>
     )
 }
