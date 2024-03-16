@@ -49,7 +49,7 @@ export const UploadImage = () => {
                         </div>
                 )}
                 </div>
-                <div>
+                <div className='relative'>
                     <div className={`absolute flex justify-center items-center w-full h-[60px] rounded-md bg-[#f3f5f9] border border-[#212121] border-dashed border-slate-300`}>
                         <label htmlFor="imagen" className='text-[#9AAFC7]' ><ion-icon name="image-outline"></ion-icon> Añadir imagen</label>
                     </div>

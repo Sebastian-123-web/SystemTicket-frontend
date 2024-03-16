@@ -45,7 +45,7 @@ export const Login = () => {
                         <Spinner className="w-12 h-12" />
                     ) : (
                         <div className="w-[400px] bg-white p-5 grid gap-5 rounded-lg">
-                            <Typography variant="h5" color="blue-gray">Sign Up</Typography>
+                            <Typography variant="h4" color="blue-gray">Iniciar Sesion</Typography>
                             <Input
                                 label="Correo"
                                 type="email"
@@ -74,12 +74,17 @@ export const Login = () => {
             </div>
             <div className="w-3/6 h-screen bg-light-green-800 flex justify-center items-center ">
                 <div className="w-[400px] bg-white p-5 grid gap-5 rounded-lg">
+                    <Typography variant="h4">Registrarse</Typography>
                     <Input label="Nombre" />
                     <Input label="Apellido" />
-                    <Input label="" />
-                    <Input label="" />
-                    <Input label="" />
-                    <UploadImage />
+                    <Input label="E-mail" />
+                    <Input label="Celular" />
+                    <Input label="Numero de Anexo" />
+                    <div>
+                        <Typography variant="h5">Subir una Foto de Perfil</Typography>
+                        <UploadImage />
+                    </div>
+                    <Button>Registrarse</Button>
                 </div>
             </div>
         </div>
