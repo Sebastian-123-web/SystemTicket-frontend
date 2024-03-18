@@ -80,6 +80,8 @@ export const Login = () => {
                     <Input label="E-mail" />
                     <Input label="Celular" />
                     <Input label="Numero de Anexo" />
+                    <Input label="Ingrese contraseña" />
+                    <Input label="Repita contraseña" />
                     <div>
                         <Typography variant="h5">Subir una Foto de Perfil</Typography>
                         <UploadImage />
