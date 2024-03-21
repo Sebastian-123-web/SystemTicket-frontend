@@ -40,7 +40,7 @@ export const Login = () => {
 
     return (
         <div className="w-full h-screen flex justify-center items-center">
-            <div className="w-3/6 h-screen bg-deep-orange-600 flex justify-center items-center">
+            <div className="w-3/6 h-screen flex justify-center items-center">
                 {
                     loading ? (
                         <Spinner className="w-12 h-12" />
@@ -82,8 +82,10 @@ export const Login = () => {
                     )
                 }
             </div>
-            <div className="w-3/6 h-screen bg-light-green-800 flex justify-center items-center ">
-                <IllustrationIconLogIn />
+            <div className="w-3/6 h-screen bg-black flex justify-center items-center ">
+                <div className="relative bg-blue-gray-200  w-[500px] h-[500px] flex justify-center items-center rounded-full">
+                    <IllustrationIconLogIn className="absolute" />
+                </div>
             </div>
         </div>
     )
