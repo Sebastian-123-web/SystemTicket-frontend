@@ -16,6 +16,7 @@ import { DashboardAdmin } from './page/DashboardAdmin/DashboardAdmin'
 import { Tickets } from './page/DashboardAdmin/Tickets/Tickets';
 import { Inventory } from './page/DashboardAdmin/Inventory/Inventory'
 import { Graphics } from './page/DashboardAdmin/Statistics/Statistics'
+import { Register } from './page/Register/Register';
 
 export default function App() {
 
@@ -26,6 +27,7 @@ export default function App() {
                     <Route index element={<Home />} />
 
                     <Route path='/login' element={<RouterLogin> <Login /> </RouterLogin >} />
+                    <Route path='/register' element={<RouterLogin> <Register /> </RouterLogin >} />
 
                     <Route path='/dashboardUser' element={<RouterDashboardUser url="/" > <DashboardUser /> </RouterDashboardUser>} >
                         <Route index element={<MyTicket />} />

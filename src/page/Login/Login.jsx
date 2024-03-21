@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 
 import { Button, Input, Spinner, Typography, Card, CardBody } from "@material-tailwind/react"
-import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/solid'
+import { EyeIcon, EyeSlashIcon, ArrowLeftOnRectangleIcon, UserPlusIcon } from '@heroicons/react/24/solid'
 
 import { useLoginContext } from '../../context/LoginContext'
-import { UploadImage } from "../../components/UploadImage/UploadImage"
+import { IllustrationIconLogIn } from '../../components/Ilustraciones/IllustrationIconLogIn'
 
 export const Login = () => {
 
@@ -65,29 +66,24 @@ export const Login = () => {
                                     { !showPassword ? <EyeIcon className="w-5 h-5" onClick={()=>setShowPassword(true)} /> : <EyeSlashIcon className="w-5 h-5" onClick={()=>setShowPassword(false)} /> }
                                 </div>
                             </div>
+                            <Link to="/resetpassword" className="text-blue-600 text-sm">¿Has olvidado tu contraseña?</Link>
                             <Button
-                                onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}} 
-                            >Iniciar Sesion</Button>
+                                className="flex justify-center items-center"
+                                onClick={()=>{login(dataLogin);handleLoginUser(dataLogin)}} >
+                                <ArrowLeftOnRectangleIcon className="w-5 h-5 mr-3" /> Iniciar Sesion
+                            </Button>
+
+                            <Link to="/register" className="w-full">
+                                <Button color="blue" className="w-full flex justify-center items-center"> 
+                                    <UserPlusIcon className="w-5 h-5 mr-3" /> Registrarse
+                                </Button>
+                            </Link>
                         </div>
                     )
                 }
             </div>
             <div className="w-3/6 h-screen bg-light-green-800 flex justify-center items-center ">
-                <div className="w-[400px] bg-white p-5 grid gap-5 rounded-lg">
-                    <Typography variant="h4">Registrarse</Typography>
-                    <Input label="Nombre" />
-                    <Input label="Apellido" />
-                    <Input label="E-mail" />
-                    <Input label="Celular" />
-                    <Input label="Numero de Anexo" />
-                    <Input label="Ingrese contraseña" />
-                    <Input label="Repita contraseña" />
-                    <div>
-                        <Typography variant="h5">Subir una Foto de Perfil</Typography>
-                        <UploadImage />
-                    </div>
-                    <Button>Registrarse</Button>
-                </div>
+                <IllustrationIconLogIn />
             </div>
         </div>
     )
