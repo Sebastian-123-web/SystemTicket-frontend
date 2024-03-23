@@ -18,7 +18,7 @@ export const LoginContextProvider = ({children}) => {
     // INICIO DE SESION Y CERRAR SESION
     const login = async (loginUser) => {
         const dataUser = await Autenticacion(loginUser)
-        console.log(dataUser)
+        //console.log(dataUser)
         setUser(dataUser)
         if(dataUser){
             localStorage.setItem('user', JSON.stringify(dataUser));
